@@ -14,6 +14,7 @@ public class App extends Application{
         htmlEditor.setPrefHeight(245);
         Scene scene = new Scene(htmlEditor);       
         stage.setScene(scene);
+        stage.setTitle("Wordus");
         stage.show();
 		
 	}

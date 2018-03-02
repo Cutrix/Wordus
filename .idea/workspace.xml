@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eadd24a6-b8c2-4c5f-918c-27b57a0a1d89" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Graph.fxml" afterPath="$PROJECT_DIR$/src/Graph.fxml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Wordus/App.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +40,8 @@
       <file leaf-file-name="App_main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App_main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+            <state relative-caret-position="221">
+              <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,6 +115,24 @@
           <expand>
             <path>
               <item name="Wordus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wordus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wordus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wordus" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wordus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wordus" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wordus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wordus" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
               <item name="Wordus" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -359,8 +377,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App_main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+        <state relative-caret-position="221">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eadd24a6-b8c2-4c5f-918c-27b57a0a1d89" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App_main.java" afterPath="$PROJECT_DIR$/src/App_main.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller.java" afterPath="$PROJECT_DIR$/src/Controller.java" />
-      <change beforePath="$PROJECT_DIR$/src/Graph.fxml" afterPath="$PROJECT_DIR$/src/Graph.fxml" />
-    </list>
+    <list default="true" id="eadd24a6-b8c2-4c5f-918c-27b57a0a1d89" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,8 +38,8 @@
       <file leaf-file-name="App_main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App_main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state relative-caret-position="215">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -368,8 +364,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App_main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        <state relative-caret-position="215">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

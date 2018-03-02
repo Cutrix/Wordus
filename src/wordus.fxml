@@ -32,8 +32,8 @@
             </Menu>
 
             <Menu mnemonicParsing="false" text="SQL">
-                <MenuItem mnemonicParsing="false" text="Selection de la langue" />
-                <MenuItem mnemonicParsing="false" text="aAjout de nouveau mot" />
+                <MenuItem mnemonicParsing="false" text="Creer une bdd" />
+                <MenuItem mnemonicParsing="false" text="voir la bddd" />
             </Menu>
 
           <Menu mnemonicParsing="false" text="Aide">

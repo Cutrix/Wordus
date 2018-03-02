@@ -8,7 +8,8 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="Controller">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -26,7 +27,7 @@
 
 
             <Menu mnemonicParsing="false" text="Dictionnaire +">
-                <MenuItem mnemonicParsing="false" text="Selection de la langue" />
+                <MenuItem mnemonicParsing="false" text="Selection de la langue" onAction="#selection_lang"/>
                 <MenuItem mnemonicParsing="false" text="aAjout de nouveau mot" />
                 <MenuItem mnemonicParsing="false" text="Modification du mot existant" />
                 <MenuItem mnemonicParsing="false" text="Suppression de mot" />

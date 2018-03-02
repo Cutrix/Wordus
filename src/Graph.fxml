@@ -51,13 +51,13 @@
         <tabs>
           <Tab text="Page 1">
                <content>
-                  <HTMLEditor htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="200.0" prefWidth="1323.0" />
+                  <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" onKeyPressed="#getAera" prefHeight="200.0" prefWidth="1323.0" />
                </content>
             </Tab>
         </tabs>
       </TabPane>
    </center>
    <bottom>
-      <Label id="statusLbl" fx:id="statusLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="760.0" text="Label" BorderPane.alignment="CENTER" />
+      <Label id="statusLbl" fx:id="statusLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="746.0" text="Label" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>

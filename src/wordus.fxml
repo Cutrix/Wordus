@@ -31,7 +31,10 @@
                 <MenuItem mnemonicParsing="false" text="Suppression de mot" />
             </Menu>
 
-
+            <Menu mnemonicParsing="false" text="SQL">
+                <MenuItem mnemonicParsing="false" text="Selection de la langue" />
+                <MenuItem mnemonicParsing="false" text="aAjout de nouveau mot" />
+            </Menu>
 
           <Menu mnemonicParsing="false" text="Aide">
 

@@ -13,7 +13,7 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="Gestion de saisie">
+          <Menu mnemonicParsing="false" text="_Gestion de saisie">
               <MenuItem mnemonicParsing="false" text="Nouveau" />
               <MenuItem mnemonicParsing="false" text="Ouvrir" />
               <MenuItem mnemonicParsing="false" text="Enregistrer" />
@@ -21,24 +21,29 @@
               <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter" />
           </Menu>
 
-            <Menu mnemonicParsing="false" text="Insertion">
+            <Menu mnemonicParsing="false" text="_Insertion">
                 <MenuItem mnemonicParsing="false" text="Image" />
             </Menu>
 
 
-            <Menu mnemonicParsing="false" text="Dictionnaire +">
-                <MenuItem mnemonicParsing="false" onAction="#selection_lang" text="Selection de la langue" />
-                <MenuItem mnemonicParsing="false" text="aAjout de nouveau mot" />
+            <Menu mnemonicParsing="false" text="_Dictionnaire +">
+               <Menu mnemonicParsing="false" text="Selection de langue">
+                 <items>
+                     <MenuItem mnemonicParsing="false" onAction="#setLanguageFr" text="Fr" />
+                   <MenuItem mnemonicParsing="false" onAction="#setLanguageAng" text="Ang" />
+                 </items>
+               </Menu>
+                <MenuItem mnemonicParsing="false" text="Ajout de nouveau mot" />
                 <MenuItem mnemonicParsing="false" text="Modification du mot existant" />
                 <MenuItem mnemonicParsing="false" text="Suppression de mot" />
             </Menu>
 
-            <Menu mnemonicParsing="false" text="SQL">
+            <Menu mnemonicParsing="false" text="_SQL">
                 <MenuItem mnemonicParsing="false" text="Creer une bdd" />
                 <MenuItem mnemonicParsing="false" text="voir la bddd" />
             </Menu>
 
-          <Menu mnemonicParsing="false" text="Aide">
+          <Menu mnemonicParsing="false" text="_Aide">
 
               <MenuItem mnemonicParsing="false" text="A propos" />
 

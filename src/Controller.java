@@ -1,6 +1,10 @@
+import com.wordus.lang.Language;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.web.HTMLEditor;
+
 
 public class Controller {
 
@@ -8,12 +12,7 @@ public class Controller {
     private Label statusLbl;
     @FXML
     private HTMLEditor htmlEditor;
-
-    //Fonction de selection de la langue
-    @FXML
-    private void selection_lang() {
-        statusLbl.setText("Hello World");
-    }
+    Language lang = new Language();
 
     @FXML
     private void quitter() {
@@ -23,5 +22,22 @@ public class Controller {
     @FXML
     private void getAera() {
         statusLbl.setText(htmlEditor.getHtmlText());
+    }
+
+    @FXML
+    private void setImage() {
+        Image image;
+    }
+
+    @FXML
+    private void setLanguageFr() {
+        lang.setLanguage("fr");
+        statusLbl.setText(lang.getLanguage());
+    }
+
+    @FXML
+    private void setLanguageAng(){
+        lang.setLanguage("ang");
+        statusLbl.setText(lang.getLanguage());
     }
 }

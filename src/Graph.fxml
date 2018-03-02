@@ -18,7 +18,7 @@ fx:controller="Controller">
               <MenuItem mnemonicParsing="false" text="Ouvrir" />
               <MenuItem mnemonicParsing="false" text="Enregistrer" />
               <MenuItem mnemonicParsing="false" text="Enregistrer sous" />
-              <MenuItem mnemonicParsing="false" text="Quitter" />
+              <MenuItem mnemonicParsing="false" text="Quitter" onAction="#quitter"/>
           </Menu>
 
             <Menu mnemonicParsing="false" text="Insertion">

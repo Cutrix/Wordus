@@ -13,7 +13,7 @@ public class App_main extends Application{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Graph.fxml"));
 
         stage.setScene(new Scene(loader.load()));
-        stage.setTitle("Wordus");
+        stage.setTitle("Word_Us");
         stage.show();
 	}
 

@@ -63,6 +63,6 @@
       </TabPane>
    </center>
    <bottom>
-      <Label id="statusLbl" fx:id="statusLbl" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="21.0" prefWidth="788.0" BorderPane.alignment="CENTER" />
+      <Label fx:id="statusLbl" alignment="TOP_LEFT" prefHeight="17.0" prefWidth="749.0" text="Label" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>

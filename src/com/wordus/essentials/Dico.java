@@ -3,56 +3,57 @@ package com.wordus.essentials;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Optional;
 
 public class Dico {
 
     private String[] words;
-    private String language;
-    private String _word;
+    private String lang;
+    private String dico;
     private FileWriter fw;
-    private String dictionnary;
 
+    final static String PATH_DICO = "dico/";
 
     public Dico() {
-
+        this.lang = "Fr";
+        this.dico  = "dico_fr.txt";
     }
 
-    public Dico(String word) {
-        this._word = word;
+    public Dico(String lg, String dico) {
+        this.lang = lg;
+        this.dico = dico;
     }
 
-    public void add(String word) throws IOException {
-        File f = new File(dictionnary);
+    public void add(String word) {
+        //System.out.println(this.dico);
+        File f = new File(PATH_DICO+this.dico);
         try {
-            fw = new FileWriter(f);
-            fw.write(word);
+            fw = new FileWriter(f, true);
+            fw.write(word+" ");
             fw.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void setDictionnary(String lang) {
-        switch (lang) {
-            case "Francais":
-                this.dictionnary = "dico_fr.txt";
-                break;
+//Gettters et setters
+    public void getWords() {
 
-            case "Anglais":
-                this.dictionnary = "dico_ang.txt";
-                break;
-        }
     }
 
-    public String getDictionnary() {
-        return dictionnary;
+    public String getDico() {
+        return dico;
     }
 
-    public String getLanguage() {
-        return language;
+    public String getLang() {
+        return lang;
     }
 
-    public void setLanguage(String lang) {
-        this.language = lang;
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+
+    public void setDico(String dico) {
+        this.dico = dico;
     }
 }

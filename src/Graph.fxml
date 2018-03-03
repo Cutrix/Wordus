@@ -33,7 +33,7 @@
                    <MenuItem mnemonicParsing="false" onAction="#setLanguageAng" text="Ang" />
                  </items>
                </Menu>
-                <MenuItem mnemonicParsing="false" text="Ajout de nouveau mot" />
+                <MenuItem mnemonicParsing="false" onAction="#ajoutMot" text="Ajout de nouveau mot" />
                 <MenuItem mnemonicParsing="false" text="Modification du mot existant" />
                 <MenuItem mnemonicParsing="false" text="Suppression de mot" />
             </Menu>
@@ -63,6 +63,6 @@
       </TabPane>
    </center>
    <bottom>
-      <Label id="statusLbl" fx:id="statusLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="746.0" text="Label" BorderPane.alignment="CENTER" />
+      <Label id="statusLbl" fx:id="statusLbl" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="21.0" prefWidth="788.0" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>

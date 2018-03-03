@@ -2,6 +2,7 @@ import com.wordus.essentials.Dico;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.web.HTMLEditor;
 
@@ -51,6 +52,17 @@ public class Controller {
         Optional<String> mot = textInputDialog.showAndWait();
         if (mot.isPresent()) {
             dc.add(mot.get());
+            statusLbl.setText("Mot Ajoute");
         }
+    }
+
+    @FXML
+    private void voirmots() {
+        dc.getWords();
+    }
+
+    @FXML
+    private void insertImg() {
+        System.out.println("image");
     }
 }

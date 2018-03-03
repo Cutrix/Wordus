@@ -14,7 +14,7 @@ public class App_main extends Application{
 
         stage.setScene(new Scene(loader.load()));
         stage.setTitle("Wordus");
-        stage.show();
+		stage.show();
 	}
 
 

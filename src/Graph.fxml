@@ -22,11 +22,12 @@
           </Menu>
 
             <Menu mnemonicParsing="false" text="_Insertion">
-                <MenuItem mnemonicParsing="false" text="Image" />
+                <MenuItem mnemonicParsing="false" onAction="#insertImg" text="Image" />
             </Menu>
 
 
             <Menu mnemonicParsing="false" text="_Dictionnaire +">
+               <MenuItem mnemonicParsing="false" onAction="#voirmots" text="voir les mots" />
                <Menu mnemonicParsing="false" text="Selection de langue">
                  <items>
                      <MenuItem mnemonicParsing="false" onAction="#setLanguageFr" text="Fr" />

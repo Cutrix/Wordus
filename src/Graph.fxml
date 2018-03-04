@@ -35,7 +35,7 @@
                  </items>
                </Menu>
                 <MenuItem mnemonicParsing="false" onAction="#ajoutMot" text="Ajout de nouveau mot" />
-                <MenuItem mnemonicParsing="false" text="Modification du mot existant" />
+                <MenuItem mnemonicParsing="false" onAction="#updateWord" text="Modification du mot existant" />
                 <MenuItem mnemonicParsing="false" onAction="#delWord" text="Suppression de mot" />
             </Menu>
 

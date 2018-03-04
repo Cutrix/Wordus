@@ -1,12 +1,9 @@
 import com.wordus.essentials.Dico;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.web.HTMLEditor;
 
-import java.io.IOException;
 import java.util.Optional;
 
 public class Controller {
@@ -67,6 +64,11 @@ public class Controller {
             dc.del(mot.get());
             statusLbl.setText("Mot supprimer");
         }
+    }
+
+    @FXML
+    private void updateWord() {
+        dc.update("jouer", "boire");
     }
 
     @FXML

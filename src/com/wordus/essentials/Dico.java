@@ -26,6 +26,11 @@ public class Dico {
         this.dico = dico;
     }
 
+    /**
+     * Ajoute des mots dans le dictionnaire
+     * @param word
+     * @return void
+     */
     public void add(String word) {
         //System.out.println(this.dico);
         File f = new File(PATH_DICO+this.dico);
@@ -38,6 +43,11 @@ public class Dico {
         }
     }
 
+    /**
+     * Permet de supprimer les mots dans un dictionnaire
+     * @param word
+     * @return void
+     */
     public void del(String word) {
         //Verifier si word est dans le dico
         if (detectWord(word)) {
@@ -59,7 +69,35 @@ public class Dico {
         }
     }
 
+    public void update(String word, String replaceW) {
+        //System.out.print("modificztion");
+        if (detectWord(word)) {
+            int indexWord;
+            ArrayList<String> al = new ArrayList<String>(Arrays.asList(this.getAllWords()));
+            indexWord = al.indexOf(word);
+            al.set(indexWord, replaceW);
 
+            String[] newDico = new String[al.size()];
+            newDico = al.toArray(newDico);
+            try {
+                fw = new FileWriter(PATH_DICO+dico);
+                for (String s : newDico) {
+                    fw.write(s+" ");
+                }
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+
+        }
+    }
+
+    /**
+     * Verifie si le mot se trouve dans le fichier
+     * @param word
+     * @return bool
+     */
     private boolean detectWord(String word) {
         String words = this.getWords();
         allWords = words.split(" ");

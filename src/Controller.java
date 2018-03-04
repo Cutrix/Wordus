@@ -57,8 +57,22 @@ public class Controller {
     }
 
     @FXML
+    private void delWord() {
+        textInputDialog = new TextInputDialog();
+        textInputDialog.setTitle("Suppression du dictionnaire");
+        textInputDialog.setHeaderText("Supprimer dans le dictionnaire");
+
+        Optional<String> mot = textInputDialog.showAndWait();
+        if (mot.isPresent()) {
+            dc.del(mot.get());
+            statusLbl.setText("Mot supprimer");
+        }
+    }
+
+    @FXML
     private void voirmots() {
-        dc.getWords();
+        //dc.getWords();
+        dc.del("dfd");
     }
 
     @FXML

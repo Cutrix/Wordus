@@ -1,7 +1,9 @@
 package com.wordus.essentials;
 
 import java.io.*;
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Dico {
 
@@ -10,6 +12,7 @@ public class Dico {
     private String dico;
     private FileWriter fw;
     private PrintWriter pw;
+    private String[] allWords;
 
     final static String PATH_DICO = "dico/";
 
@@ -35,21 +38,58 @@ public class Dico {
         }
     }
 
+    public void del(String word) {
+        //Verifier si word est dans le dico
+        if (detectWord(word)) {
+            ArrayList<String> al = new ArrayList<String>(Arrays.asList(this.getAllWords()));
+            al.remove(word);
+            String[] newDico = new String[al.size()];
+            newDico = al.toArray(newDico);
+            try {
+                fw = new FileWriter(PATH_DICO+dico);
+                for (String s : newDico) {
+                    fw.write(s+" ");
+                }
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+
+        }
+    }
+
+
+    private boolean detectWord(String word) {
+        String words = this.getWords();
+        allWords = words.split(" ");
+        for (String s : allWords) {
+            if (word.contentEquals(s)) return true;
+        }
+        return false;
+    }
+
 //Gettters et setters
-    public void getWords() {
+    public String getWords() {
+        String word = null;
         try {
             InputStream flux = new FileInputStream(PATH_DICO+dico);
             InputStreamReader lecture = new InputStreamReader(flux);
             BufferedReader buff = new BufferedReader(lecture);
             String ligne;
             while ((ligne = buff.readLine()) != null) {
-                System.out.println(ligne);
+                word += ligne;
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return word;
+    }
+
+    public String[] getAllWords() {
+        return allWords;
     }
 
 

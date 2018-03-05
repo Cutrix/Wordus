@@ -1,5 +1,7 @@
 package com.wordus.essentials;
 
+import org.jsoup.Jsoup;
+
 public class SpellChecker {
 
     //Passage de dico par DI (Dependency Injection)
@@ -10,7 +12,6 @@ public class SpellChecker {
     public SpellChecker(Dico dc) {
 
         this.dc = dc;
-
     }
 
     public String getWordsStartBy(String word) {

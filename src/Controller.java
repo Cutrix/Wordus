@@ -1,13 +1,23 @@
 import com.wordus.essentials.Dico;
 import com.wordus.essentials.SpellChecker;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import jdk.security.jarsigner.JarSigner;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
+import java.awt.event.ActionEvent;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Optional;
 
 public class Controller {
@@ -21,6 +31,8 @@ public class Controller {
 
     private Dico dc = new Dico();
     private SpellChecker sp;
+
+    private final static int SEE_FROM = 3;
 
 
     @FXML
@@ -99,6 +111,22 @@ public class Controller {
     @FXML
     private void checkSyntax() {
         sp = new SpellChecker(dc);
-        System.out.print(sp.getWordsStartBy("boi"));
+        htmlEditor.setOnKeyPressed(event -> {
+            if (event.getCode().equals(KeyCode.SPACE)) {
+                Document doc = Jsoup.parse(htmlEditor.getHtmlText());
+                Element content = doc.tagName("body p");
+                ArrayList<String> toCompares = new ArrayList<String>(Arrays.asList(content.text().split(" ")));
+                int lastWordIndex = toCompares.size();
+                String lastWordForLikely;
+                String lastWord = toCompares.get(lastWordIndex-1);
+                if (lastWord.length() > SEE_FROM) {
+                    lastWordForLikely = toCompares.get(lastWordIndex-1).substring(0,3);
+                } else {
+                    lastWordForLikely = toCompares.get(lastWordIndex-1).substring(0,2);
+                }
+                //System.out.println(lastWordForLikely);
+                System.out.println(sp.getWordsStartBy(lastWordForLikely.toLowerCase()));
+            }
+        });
     }
 }

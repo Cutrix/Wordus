@@ -62,7 +62,7 @@
         <tabs>
           <Tab text="Page 1">
                <content>
-                  <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" onKeyPressed="#getAera" prefHeight="200.0" prefWidth="1323.0" />
+                  <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" onKeyPressed="#checkSyntax" prefHeight="200.0" prefWidth="1323.0" />
                </content>
             </Tab>
         </tabs>

@@ -1,9 +1,13 @@
 import com.wordus.essentials.Dico;
+import com.wordus.essentials.SpellChecker;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.web.HTMLEditor;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.Optional;
 
 public class Controller {
@@ -13,8 +17,10 @@ public class Controller {
     @FXML
     private HTMLEditor htmlEditor;
     private TextInputDialog textInputDialog;
+    private Stage stage;
 
     private Dico dc = new Dico();
+    private SpellChecker sp;
 
 
     @FXML
@@ -79,6 +85,20 @@ public class Controller {
 
     @FXML
     private void insertImg() {
-        System.out.println("image");
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text Files", "*.txt"),
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
+                new FileChooser.ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
+                new FileChooser.ExtensionFilter("All Files", "*.*"));
+        File selectedFile = fileChooser.showOpenDialog(stage);
+        System.out.println(selectedFile.getAbsoluteFile().toURI());
+    }
+
+    @FXML
+    private void checkSyntax() {
+        sp = new SpellChecker(dc);
+        System.out.print(sp.getWordsStartBy("boi"));
     }
 }

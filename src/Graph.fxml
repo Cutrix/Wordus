@@ -43,6 +43,11 @@
                 <MenuItem mnemonicParsing="false" text="Creer une bdd" />
                 <MenuItem mnemonicParsing="false" text="voir la bddd" />
             </Menu>
+            <Menu mnemonicParsing="false" text="Outils">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#checkSyntax" text="verifier la syntaxe" />
+              </items>
+            </Menu>
 
           <Menu mnemonicParsing="false" text="_Aide">
 

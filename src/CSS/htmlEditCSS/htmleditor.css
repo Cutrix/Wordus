@@ -1,0 +1,23 @@
+/* Set the background colors for all buttons and toggle buttons */
+.html-editor
+{
+	-fx-font: 12 cambria;
+	-fx-border-color: blue;
+	-fx-border-style: solid;
+	-fx-border-width: 2;
+}
+
+.html-editor .button, .html-editor .toggle-button
+{
+	-fx-background-color: lightblue;
+}
+
+.html-editor-background
+{
+	-fx-color-label-visible: true;
+}
+
+.html-editor-foreground
+{
+	-fx-color-label-visible: true;
+}

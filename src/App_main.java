@@ -3,6 +3,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
 
 public class App_main extends Application{
 
@@ -15,6 +16,10 @@ public class App_main extends Application{
         stage.setScene(new Scene(loader.load()));
         stage.setTitle("Wordus");
 		stage.show();
+		//icon
+		stage.getIcons().add(new Image("font\\icon\\text-editor.png"));
+		//HtmlEditor css
+
 	}
 
 

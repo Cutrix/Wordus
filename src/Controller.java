@@ -3,6 +3,8 @@ import com.wordus.essentials.SpellChecker;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -33,6 +35,20 @@ public class Controller {
     private SpellChecker sp;
 
     private final static int SEE_FROM = 3;
+
+    @FXML
+    TabPane Tabpaner  = new TabPane();
+    int numTab = 2;
+
+    @FXML
+    private void NouveauTab() {
+        System.out.println(numTab);
+        Tab tab1 = new Tab("Page " + numTab);
+        Tabpaner.getTabs().addAll(tab1);
+        //ajout de htmleditor
+        //     tabl.getContent().getClass();
+        numTab = numTab+1;
+    }
 
 
     @FXML

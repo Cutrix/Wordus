@@ -18,12 +18,14 @@ import jdk.security.jarsigner.JarSigner;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import javafx.event.*;
 
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
+import javafx.stage.DirectoryChooser;
 
 public class Controller {
 
@@ -48,10 +50,7 @@ public class Controller {
     @FXML
     TabPane Tabpaner  = new TabPane();
     int numTab = 2;
-
-
-
-    @FXML
+        @FXML
     private void NouveauTab() {
         System.out.println(numTab);
         Tab tab1 = new Tab("Page " + numTab);
@@ -60,6 +59,25 @@ public class Controller {
         tab1.setContent(htmlEditor1);
         numTab = numTab+1;
     }
+    //Ouvrir fichier
+    @FXML
+    final Label labelSelectedDirectory = new Label();
+        @FXML
+    private void OuvrirFichier(){
+
+
+
+                DirectoryChooser directoryChooser = new DirectoryChooser();
+                File selectedDirectory =
+                        directoryChooser.showDialog(stage);
+
+                if(selectedDirectory == null){
+                    labelSelectedDirectory.setText("No Directory selected");
+                }else{
+                    labelSelectedDirectory.setText(selectedDirectory.getAbsolutePath());
+                }
+            }
+         
 
 
     @FXML

@@ -14,8 +14,8 @@
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="_Gestion de saisie">
-              <MenuItem mnemonicParsing="false" text="Nouveau" onAction="#NouveauTab"/>
-              <MenuItem mnemonicParsing="false" text="Ouvrir" />
+              <MenuItem mnemonicParsing="false" onAction="#NouveauTab" text="Nouveau" />
+              <MenuItem mnemonicParsing="false" onAction="#OuvrirFichier" text="Ouvrir" />
               <MenuItem mnemonicParsing="false" text="Enregistrer" />
               <MenuItem mnemonicParsing="false" text="Enregistrer sous" />
               <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter" />
@@ -58,7 +58,7 @@
       </MenuBar>
    </top>
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER" fx:id="Tabpaner">
+      <TabPane fx:id="Tabpaner" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
         <tabs>
           <Tab text="Page 1">
                <content>

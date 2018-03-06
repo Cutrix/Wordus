@@ -10,6 +10,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -35,6 +36,8 @@ public class Controller {
 
     private Dico dc = new Dico();
     private SpellChecker sp;
+
+    private Text text;
 
     private final static int SEE_FROM = 3;
 
@@ -143,7 +146,11 @@ public class Controller {
                     lastWordForLikely = toCompares.get(lastWordIndex-1).substring(0,2);
                 }
                 //System.out.println(lastWordForLikely);
-                System.out.println(sp.getWordsStartBy(lastWordForLikely.toLowerCase()));
+                if (!sp.getDico().detectWord(lastWord)) {
+                    text = new Text(lastWord);
+                    text.setUnderline(true);
+                }
+                //System.out.println(sp.getWordsStartBy(lastWordForLikely.toLowerCase()));
             }
         });
     }

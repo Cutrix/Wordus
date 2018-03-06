@@ -98,7 +98,7 @@ public class Dico {
      * @param word
      * @return bool
      */
-    private boolean detectWord(String word) {
+    public boolean detectWord(String word) {
         String words = this.getWords();
         allWords = words.split(" ");
         for (String s : allWords) {

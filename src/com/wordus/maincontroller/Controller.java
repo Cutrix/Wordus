@@ -38,17 +38,23 @@ public class Controller {
 
     private final static int SEE_FROM = 3;
 
+
+
+    // Menu gestion de saisi
+    //Nouveau
     @FXML
     TabPane Tabpaner  = new TabPane();
     int numTab = 2;
+
+
 
     @FXML
     private void NouveauTab() {
         System.out.println(numTab);
         Tab tab1 = new Tab("Page " + numTab);
         Tabpaner.getTabs().addAll(tab1);
-        //ajout de htmleditor
-        //     tabl.getContent().getClass();
+         HTMLEditor  htmlEditor1 = new HTMLEditor();
+        tab1.setContent(htmlEditor1);
         numTab = numTab+1;
     }
 

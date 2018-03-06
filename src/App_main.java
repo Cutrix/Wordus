@@ -11,6 +11,7 @@ public class App_main extends Application{
 
 	@Override
 	public void start(Stage stage) throws Exception {
+		try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Graph.fxml"));
 
         stage.setScene(new Scene(loader.load()));
@@ -19,7 +20,11 @@ public class App_main extends Application{
 		//icon
 		stage.getIcons().add(new Image("font\\icon\\text-editor.png"));
 		//HtmlEditor css
+		stage.getStylesheets().add(getClass().getResource("htmleditor.css").toExternalForm());
 
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 

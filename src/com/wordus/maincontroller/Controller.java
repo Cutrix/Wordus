@@ -1,3 +1,5 @@
+package com.wordus.maincontroller;
+
 import com.wordus.essentials.Dico;
 import com.wordus.essentials.SpellChecker;
 import javafx.event.EventHandler;

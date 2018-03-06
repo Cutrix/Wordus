@@ -25,6 +25,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
 import javafx.stage.DirectoryChooser;
+import java.io.*;
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 
 public class Controller {
 
@@ -41,40 +45,84 @@ public class Controller {
     private final static int SEE_FROM = 3;
 
 
-
     // Menu gestion de saisi
     //Nouveau
     @FXML
-    TabPane Tabpaner  = new TabPane();
+    TabPane Tabpaner = new TabPane();
     int numTab = 2;
-        @FXML
+
+    @FXML
     private void NouveauTab() {
         System.out.println(numTab);
         Tab tab1 = new Tab("Page " + numTab);
         Tabpaner.getTabs().addAll(tab1);
-         HTMLEditor  htmlEditor1 = new HTMLEditor();
+        HTMLEditor htmlEditor1 = new HTMLEditor();
         tab1.setContent(htmlEditor1);
-        numTab = numTab+1;
+        numTab = numTab + 1;
     }
+
     //Ouvrir fichier
     @FXML
-    final Label labelSelectedDirectory = new Label();
-        @FXML
-    private void OuvrirFichier(){
+    HTMLEditor htmlEditorO = new HTMLEditor();
+    File file;
+
+    @FXML
+    private void OuvrirFichier() {
+        System.out.println(numTab);
+        Tab tab1 = new Tab("Page " + numTab);
+        Tabpaner.getTabs().addAll(tab1);
+        HTMLEditor htmlEditor0 = new HTMLEditor();
+        tab1.setContent(htmlEditorO);
+        numTab = numTab + 1;
+
+        FileChooser fileChooser = new FileChooser();
+
+//Set extension filter
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("AVI files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+//Show open file dialog
+        file = fileChooser.showOpenDialog(null);
+        String contenu = file.toString();
+        System.out.println(contenu);
+        //htmlEditor0.setHtmlText(FileChooser);
+    }
 
 
 
-                DirectoryChooser directoryChooser = new DirectoryChooser();
-                File selectedDirectory =
-                        directoryChooser.showDialog(stage);
 
-                if(selectedDirectory == null){
-                    labelSelectedDirectory.setText("No Directory selected");
-                }else{
-                    labelSelectedDirectory.setText(selectedDirectory.getAbsolutePath());
-                }
-            }
-         
+
+    //Enregistrer un doc
+    @FXML
+    private void EnregistFile() {
+        FileChooser fileChooser = new FileChooser();
+
+//Set extension filter
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+//Show save file dialog
+        File file = fileChooser.showSaveDialog(stage);
+
+        if(file != null){
+            SaveFile(htmlEditorO.getHtmlText(), file);
+        }
+    }
+@FXML
+private void SaveFile(String content, File file){
+    try {
+        FileWriter fileWriter = null;
+
+        fileWriter = new FileWriter(file);
+        fileWriter.write(content);
+        fileWriter.close();
+    } catch (IOException ex) {
+        Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+    }
+
+}
+
+
 
 
     @FXML

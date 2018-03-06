@@ -56,17 +56,18 @@ public class Controller {
 
     @FXML
     private void NouveauTab() {
-        System.out.println(numTab);
         Tab tab1 = new Tab("Page " + numTab);
         Tabpaner.getTabs().addAll(tab1);
         HTMLEditor htmlEditor1 = new HTMLEditor();
         tab1.setContent(htmlEditor1);
         numTab = numTab + 1;
+        Document doc = Jsoup.parse(htmlEditor.getHtmlText());
+        Element content = doc.tagName("body p");
+        System.out.println(content.text());
     }
 
     //Ouvrir fichier
-    @FXML
-    HTMLEditor htmlEditorO = new HTMLEditor();
+
     File file;
 
     @FXML
@@ -74,8 +75,8 @@ public class Controller {
         System.out.println(numTab);
         Tab tab1 = new Tab("Page " + numTab);
         Tabpaner.getTabs().addAll(tab1);
-        HTMLEditor htmlEditor0 = new HTMLEditor();
-        tab1.setContent(htmlEditorO);
+      //  HTMLEditor htmlEditor0 = new HTMLEditor();
+        tab1.setContent(htmlEditor);
         numTab = numTab + 1;
 
         FileChooser fileChooser = new FileChooser();
@@ -106,9 +107,10 @@ public class Controller {
 
 //Show save file dialog
         File file = fileChooser.showSaveDialog(stage);
-
+        Document doc = Jsoup.parse(htmlEditor.getHtmlText());
+        Element content = doc.tagName("body p");
         if(file != null){
-            SaveFile(htmlEditorO.getHtmlText(), file);
+            SaveFile(content.text(), file);
         }
     }
 @FXML
@@ -127,7 +129,7 @@ private void SaveFile(String content, File file){
 
 
 
-
+    //Quiter l'application
     @FXML
     private void quitter() {
         System.exit(0);
@@ -202,7 +204,7 @@ private void SaveFile(String content, File file){
     }
 
     @FXML
-    private void checkSyntax() {
+    public void checkSyntax() {
         sp = new SpellChecker(dc);
         htmlEditor.setOnKeyPressed(event -> {
             if (event.getCode().equals(KeyCode.SPACE)) {

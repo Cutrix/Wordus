@@ -21,7 +21,7 @@ public class App_main extends Application{
 		stage.getIcons().add(new Image("font\\icon\\text-editor.png"));
 		//HtmlEditor css
 		//stage.getStylesheets().add(getClass().getResource("htmleditor.css").toExternalForm());
-			
+
 
 		} catch(Exception e) {
 			e.printStackTrace();

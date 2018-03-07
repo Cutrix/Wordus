@@ -5,8 +5,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 
-public class App_main extends Application{
 
+public class App_main extends Application{
 	Stage stage;
 
 	@Override

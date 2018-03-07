@@ -10,6 +10,8 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
@@ -20,8 +22,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import javafx.event.*;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
@@ -44,6 +48,7 @@ public class Controller {
     private SpellChecker sp;
 
     private Text text;
+    private Label lb;
 
     private final static int SEE_FROM = 3;
 
@@ -203,8 +208,8 @@ private void SaveFile(String content, File file){
                 new FileChooser.ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
                 new FileChooser.ExtensionFilter("All Files", "*.*"));
         File selectedFile = fileChooser.showOpenDialog(stage);
-        System.out.println(selectedFile.getAbsoluteFile().toURI());
-
+        URI yourPics = selectedFile.getAbsoluteFile().toURI();
+        htmlEditor.setHtmlText("<img src='"+yourPics+"' style='width:300px; height: 300px'/>");
     }
 
     @FXML
@@ -212,6 +217,7 @@ private void SaveFile(String content, File file){
         sp = new SpellChecker(dc);
         htmlEditor.setOnKeyPressed(event -> {
             if (event.getCode().equals(KeyCode.SPACE)) {
+                String htmlText  = htmlEditor.getHtmlText();
                 Document doc = Jsoup.parse(htmlEditor.getHtmlText());
                 Element content = doc.tagName("body p");
                 ArrayList<String> toCompares = new ArrayList<String>(Arrays.asList(content.text().split(" ")));
@@ -223,12 +229,11 @@ private void SaveFile(String content, File file){
                 } else {
                     lastWordForLikely = toCompares.get(lastWordIndex-1).substring(0,2);
                 }
-                //System.out.println(lastWordForLikely);
-                if (!sp.getDico().detectWord(lastWord)) {
-                    text = new Text(lastWord);
-                    text.setUnderline(true);
-                }
-                //System.out.println(sp.getWordsStartBy(lastWordForLikely.toLowerCase()));
+                System.out.println(sp.getWordsStartBy(lastWordForLikely));
+                //System.out.println(htmlEditor.getHtmlText());
+                //htmlEditor.setHtmlText("<p style='text-decoration: red underline wavy ;'>"+lastWord+"</p>");
+                //System.out.println("------------"+htmlEditor.getHtmlText());
+                //System.out.print(lastWord);
             }
         });
     }

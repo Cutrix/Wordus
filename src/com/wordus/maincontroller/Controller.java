@@ -14,7 +14,7 @@ import javafx.scene.text.Text;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import jdk.security.jarsigner.JarSigner;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -91,6 +91,9 @@ public class Controller {
         System.out.println(contenu);
         //htmlEditor0.setHtmlText(FileChooser);
     }
+
+
+
 
 
 
@@ -201,6 +204,7 @@ private void SaveFile(String content, File file){
                 new FileChooser.ExtensionFilter("All Files", "*.*"));
         File selectedFile = fileChooser.showOpenDialog(stage);
         System.out.println(selectedFile.getAbsoluteFile().toURI());
+
     }
 
     @FXML

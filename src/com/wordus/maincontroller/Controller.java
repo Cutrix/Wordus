@@ -122,7 +122,8 @@ public class Controller {
        // URI yourPics = selectedFile.getAbsoluteFile().toURI();
 
         if(file != null){
-         SaveFile(content.text(), file);
+         //SaveFile(content.text(), file);
+         SaveFile(htmlEditor.getHtmlText(), file);
         }
     }
 @FXML

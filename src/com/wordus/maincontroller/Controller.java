@@ -116,9 +116,13 @@ public class Controller {
 //Show save file dialog
         File file = fileChooser.showSaveDialog(stage);
         Document doc = Jsoup.parse(htmlEditor.getHtmlText());
-        Element content = doc.tagName("body p");
+        Element content = doc.tagName("body");
+
+       // FileChooser fileChooser = new FileChooser();
+       // URI yourPics = selectedFile.getAbsoluteFile().toURI();
+
         if(file != null){
-            SaveFile(content.text(), file);
+         SaveFile(content.text(), file);
         }
     }
 @FXML
@@ -209,7 +213,11 @@ private void SaveFile(String content, File file){
                 new FileChooser.ExtensionFilter("All Files", "*.*"));
         File selectedFile = fileChooser.showOpenDialog(stage);
         URI yourPics = selectedFile.getAbsoluteFile().toURI();
-        htmlEditor.setHtmlText("<img src='"+yourPics+"' style='width:300px; height: 300px'/>");
+
+        Document doc = Jsoup.parse(htmlEditor.getHtmlText());
+        Element content = doc.tagName("body p");
+
+        htmlEditor.setHtmlText(content.text() + "<img src='"+yourPics+"' style='width:300px; height: 300px'/>");
     }
 
     @FXML

@@ -99,11 +99,6 @@ public class Controller {
 
 
 
-
-
-
-
-
     //Enregistrer un doc
     @FXML
     private void EnregistFile() {
@@ -115,15 +110,17 @@ public class Controller {
 
 //Show save file dialog
         File file = fileChooser.showSaveDialog(stage);
-        Document doc = Jsoup.parse(htmlEditor.getHtmlText());
-        Element content = doc.tagName("body");
 
-       // FileChooser fileChooser = new FileChooser();
-       // URI yourPics = selectedFile.getAbsoluteFile().toURI();
+        // FileChooser fileChooser = new FileChooser();
+        // URI yourPics = selectedFile.getAbsoluteFile().toURI();
 
         if(file != null){
-         //SaveFile(content.text(), file);
-         SaveFile(htmlEditor.getHtmlText(), file);
+            Document doc = Jsoup.parseBodyFragment(htmlEditor.getHtmlText());
+            Element body = doc.body();
+            SaveFile(String.valueOf(body), file);
+         //SaveFile(htmlEditor.getHtmlText(), file);
+
+            //System.out.println(content);
         }
     }
 @FXML
@@ -138,6 +135,18 @@ private void SaveFile(String content, File file){
         Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
     }
 
+}
+
+@FXML
+private void tester() {
+     //System.out.println("je suis la ");
+        //System.out.println(htmlEditor.getHtmlText());
+        /*Document doc = Jsoup.parse(htmlEditor.getHtmlText());
+        Element content = doc.tagName("body p");
+        System.out.println(content.outerHtml());*/
+        Document doc = Jsoup.parseBodyFragment(htmlEditor.getHtmlText());
+        Element body = doc.body();
+        System.out.println(body);
 }
 
 

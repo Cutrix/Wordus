@@ -18,7 +18,7 @@ public class App_main extends Application{
         stage.setTitle("Wordus");
 		stage.show();
 		//icon
-		stage.getIcons().add(new Image("font\\icon\\text-editor.png"));
+//		stage.getIcons().add(new Image("font\\icon\\text-editor.png"));
 		//HtmlEditor css
 		//stage.getStylesheets().add(getClass().getResource("htmleditor.css").toExternalForm());
 

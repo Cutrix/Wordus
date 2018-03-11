@@ -4,6 +4,7 @@ import com.wordus.essentials.Dico;
 import com.wordus.essentials.SpellChecker;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -247,12 +248,14 @@ private void tester() {
                 } else {
                     lastWordForLikely = toCompares.get(lastWordIndex-1).substring(0,2);
                 }
-                System.out.println(sp.getWordsStartBy(lastWordForLikely));
+                //System.out.println(sp.getWordsStartBy(lastWordForLikely));
                 //System.out.println(htmlEditor.getHtmlText());
                 //htmlEditor.setHtmlText("<p style='text-decoration: red underline wavy ;'>"+lastWord+"</p>");
                 //System.out.println("------------"+htmlEditor.getHtmlText());
                 //System.out.print(lastWord);
             }
         });
+
+
     }
 }

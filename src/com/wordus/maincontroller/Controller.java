@@ -2,12 +2,10 @@ package com.wordus.maincontroller;
 
 import com.wordus.essentials.Dico;
 import com.wordus.essentials.SpellChecker;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -39,7 +37,6 @@ public class Controller {
     private ContextMenu contextMenu;
 
     Stage stage;
-    Parent root;
 
     private Dico dc = new Dico();
     private SpellChecker sp;
@@ -274,8 +271,6 @@ private void tester() {
     }
 
 
-    public void voirmots(javafx.event.ActionEvent actionEvent) throws IOException {
-        System.out.println("Je uis ici");
-        Parent voir_dico_parent = FXMLLoader.load(getClass().getResource("wordsDico.fxml"));
+    public void voirmots(ActionEvent actionEvent) {
     }
 }

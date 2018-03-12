@@ -4,6 +4,7 @@ import com.wordus.essentials.Dico;
 import com.wordus.essentials.SpellChecker;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -254,5 +255,6 @@ private void tester() {
                 //System.out.print(lastWord);
             }
         });
+
     }
 }

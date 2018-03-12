@@ -9,22 +9,15 @@ import javafx.scene.image.Image;
 
 public class App_main extends Application{
 
-	@FXML
-	public Stage win;
-	public Parent root;
-
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
 
-			win = primaryStage;
-        //FXMLLoader loader = new FXMLLoader(getClass().getResource("Graph.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Graph.fxml"));
 
-        root = FXMLLoader.load(getClass().getResource("Graph.fxml"));
-
-        win.setScene(new Scene(root));
-        win.setTitle("Wordus");
-		win.show();
+        primaryStage.setScene(new Scene(loader.load()));
+        primaryStage.setTitle("Wordus");
+		primaryStage.show();
 		//icon
 //		stage.getIcons().add(new Image("font\\icon\\text-editor.png"));
 		//HtmlEditor css

@@ -5,6 +5,9 @@ import com.wordus.essentials.SpellChecker;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -16,6 +19,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import org.jsoup.Jsoup;
@@ -43,7 +47,9 @@ public class Controller {
     @FXML
     private HTMLEditor htmlEditor;
     private TextInputDialog textInputDialog;
-    private Stage stage;
+
+    Stage stage;
+    Parent root;
 
     private Dico dc = new Dico();
     private SpellChecker sp;
@@ -207,11 +213,7 @@ private void tester() {
         dc.update("jouer", "boire");
     }
 
-    @FXML
-    private void voirmots() {
-        //dc.getWords();
-        dc.del("dfd");
-    }
+
 
     @FXML
     private void insertImg() {
@@ -256,5 +258,14 @@ private void tester() {
             }
         });
 
+    }
+
+
+    public void voirmots(javafx.event.ActionEvent actionEvent) throws IOException {
+        Parent voir_dico_parent = FXMLLoader.load(getClass().getResource("words_dico.fxml"));
+        Scene voir_dico_scene = new Scene(voir_dico_parent);
+        Stage app_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        app_stage.setScene(voir_dico_scene);
+        app_stage.show();
     }
 }

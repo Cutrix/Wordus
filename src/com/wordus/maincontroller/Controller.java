@@ -2,7 +2,6 @@ package com.wordus.maincontroller;
 
 import com.wordus.essentials.Dico;
 import com.wordus.essentials.SpellChecker;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -10,9 +9,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
@@ -21,16 +18,12 @@ import javafx.stage.Stage;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import javafx.event.*;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
-import javafx.stage.DirectoryChooser;
 import java.io.*;
 import java.util.logging.Logger;
 import java.util.logging.Level;
@@ -43,7 +36,10 @@ public class Controller {
     @FXML
     private HTMLEditor htmlEditor;
     private TextInputDialog textInputDialog;
-    private Stage stage;
+    private ContextMenu contextMenu;
+
+    Stage stage;
+    Parent root;
 
     private Dico dc = new Dico();
     private SpellChecker sp;
@@ -207,11 +203,7 @@ private void tester() {
         dc.update("jouer", "boire");
     }
 
-    @FXML
-    private void voirmots() {
-        //dc.getWords();
-        dc.del("dfd");
-    }
+
 
     @FXML
     private void insertImg() {
@@ -248,14 +240,42 @@ private void tester() {
                 } else {
                     lastWordForLikely = toCompares.get(lastWordIndex-1).substring(0,2);
                 }
-                //System.out.println(sp.getWordsStartBy(lastWordForLikely));
-                //System.out.println(htmlEditor.getHtmlText());
-                //htmlEditor.setHtmlText("<p style='text-decoration: red underline wavy ;'>"+lastWord+"</p>");
-                //System.out.println("------------"+htmlEditor.getHtmlText());
-                //System.out.print(lastWord);
+
+                ContextMenu cm = new ContextMenu();
+
+                //Les mots dans le dico en accord avec le mot
+                String likelyWords = sp.getWordsStartBy(lastWordForLikely);
+
+                //On rend les mots en ArrayList
+                ArrayList<String> likelyAlWrods = new ArrayList<String>(Arrays.asList(likelyWords.split(" ")));
+
+                //System.out.println(likelyAlWrods.size());
+                //int lengthLikelyAlWords = likelyAlWrods.size()-1;
+
+                ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>();
+
+                for (int i = 0 ; i < likelyAlWrods.size() ; i++) {
+                    //System.out.println(likelyAlWrods.get(i));
+                    menuItems.add(new MenuItem(likelyAlWrods.get(i)));
+                    int finalI = i;
+                    menuItems.get(i).setOnAction(event1 -> {
+                       //System.out.println(likelyAlWrods.get(finalI));
+                        String replaceByLikelyWord = htmlEditor.getHtmlText().replace(lastWord, likelyAlWrods.get(finalI));
+                        htmlEditor.setHtmlText(replaceByLikelyWord);
+                        //System.out.println(htmlEditor.getHtmlText());
+
+                    });
+                }
+
+                cm.getItems().addAll(menuItems);
+                htmlEditor.setContextMenu(cm);
             }
         });
+    }
 
 
+    public void voirmots(javafx.event.ActionEvent actionEvent) throws IOException {
+        System.out.println("Je uis ici");
+        Parent voir_dico_parent = FXMLLoader.load(getClass().getResource("wordsDico.fxml"));
     }
 }

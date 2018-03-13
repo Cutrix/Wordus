@@ -279,9 +279,7 @@ private void tester() {
     }
 
     public void Test(ActionEvent actionEvent) {
-        System.out.println(Tabpaner.getTabs());
-        System.out.println(Tabpaner.getTabs().get(numTab));
-        System.out.println(numTab);
+        System.out.println(Tabpaner.getTabs().get(0));
     }
 
     public void search(ActionEvent actionEvent) {

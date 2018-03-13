@@ -62,6 +62,7 @@ public class Controller {
         Tabpaner.getTabs().addAll(tab1);
         tab1.setContent(htmlEditor1);
         numTab = numTab + 1;
+       System.out.println( htmlEditor1.toString());
         //Document doc = Jsoup.parse(htmlEditor.getHtmlText());
         //Element content = doc.tagName("body p");
         //System.out.println(content.text());
@@ -272,8 +273,9 @@ private void SaveFile(String content, File file){
 
 
         if (currentTabs.isSelected()) {
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            Document doc = Jsoup.parseBodyFragment(htmlEditor.getHtmlText());
+            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
             Element body = doc.body();
             alert.setContentText(String.valueOf(body));
             alert.showAndWait();

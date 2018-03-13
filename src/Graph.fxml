@@ -46,6 +46,8 @@
             <Menu mnemonicParsing="false" text="Outils">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#checkSyntax" text="verifier la syntaxe" />
+                  <MenuItem mnemonicParsing="false" onAction="#search" text="Rechercher" />
+                  <MenuItem mnemonicParsing="false" onAction="#Test" text="Test" />
               </items>
             </Menu>
 

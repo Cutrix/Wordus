@@ -43,8 +43,11 @@ public class Controller {
 
     private Text text;
     private Label lb;
+    private TabPane currentTabs;
 
     private final static int SEE_FROM = 3;
+
+    private HTMLEditor htmlEditor1;
 
 
     // Menu gestion de saisi
@@ -56,13 +59,13 @@ public class Controller {
     @FXML
     private void NouveauTab() {
         Tab tab1 = new Tab("Page " + numTab);
+        htmlEditor1 = new HTMLEditor();
         Tabpaner.getTabs().addAll(tab1);
-        HTMLEditor htmlEditor1 = new HTMLEditor();
         tab1.setContent(htmlEditor1);
         numTab = numTab + 1;
-        Document doc = Jsoup.parse(htmlEditor.getHtmlText());
-        Element content = doc.tagName("body p");
-        System.out.println(content.text());
+        //Document doc = Jsoup.parse(htmlEditor.getHtmlText());
+        //Element content = doc.tagName("body p");
+        //System.out.println(content.text());
     }
 
     //Ouvrir fichier
@@ -73,9 +76,10 @@ public class Controller {
     private void OuvrirFichier() {
         System.out.println(numTab);
         Tab tab1 = new Tab("Page " + numTab);
+        tab1.contentProperty();
         Tabpaner.getTabs().addAll(tab1);
       //  HTMLEditor htmlEditor0 = new HTMLEditor();
-        tab1.setContent(htmlEditor);
+        tab1.setContent(htmlEditor1);
         numTab = numTab + 1;
 
         FileChooser fileChooser = new FileChooser();
@@ -109,7 +113,7 @@ public class Controller {
         // URI yourPics = selectedFile.getAbsoluteFile().toURI();
 
         if(file != null){
-            Document doc = Jsoup.parseBodyFragment(htmlEditor.getHtmlText());
+            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
             Element body = doc.body();
             SaveFile(String.valueOf(body), file);
          //SaveFile(htmlEditor.getHtmlText(), file);
@@ -272,5 +276,22 @@ private void tester() {
 
 
     public void voirmots(ActionEvent actionEvent) {
+    }
+
+    public void Test(ActionEvent actionEvent) {
+        System.out.println(Tabpaner.getTabs());
+        System.out.println(Tabpaner.getTabs().get(numTab));
+        System.out.println(numTab);
+    }
+
+    public void search(ActionEvent actionEvent) {
+        textInputDialog = new TextInputDialog();
+        textInputDialog.setTitle("Rechercher");
+        textInputDialog.setHeaderText("Rechercher un mot");
+
+        Optional<String> match = textInputDialog.showAndWait();
+        if (match.isPresent()) {
+
+        }
     }
 }

@@ -74,7 +74,7 @@ public class Controller {
 
     @FXML
     private void OuvrirFichier() {
-        System.out.println(numTab);
+       // System.out.println(numTab);
         Tab tab1 = new Tab("Page " + numTab);
         tab1.contentProperty();
         Tabpaner.getTabs().addAll(tab1);
@@ -100,6 +100,7 @@ public class Controller {
     //Enregistrer un doc
     @FXML
     private void EnregistFile() {
+
         FileChooser fileChooser = new FileChooser();
 
 //Set extension filter
@@ -109,11 +110,9 @@ public class Controller {
 //Show save file dialog
         File file = fileChooser.showSaveDialog(stage);
 
-        // FileChooser fileChooser = new FileChooser();
-        // URI yourPics = selectedFile.getAbsoluteFile().toURI();
 
         if(file != null){
-            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
+            Document doc = Jsoup.parseBodyFragment(htmlEditor.getHtmlText());
             Element body = doc.body();
             SaveFile(String.valueOf(body), file);
          //SaveFile(htmlEditor.getHtmlText(), file);
@@ -223,6 +222,7 @@ private void tester() {
 
         htmlEditor.setHtmlText(content.text() + "<img src='"+yourPics+"' style='width:300px; height: 300px'/>");
     }
+
 
     @FXML
     public void checkSyntax() {

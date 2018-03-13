@@ -279,9 +279,8 @@ private void tester() {
     }
 
     public void Test(ActionEvent actionEvent) {
-
         System.out.println(Tabpaner.getTabs());
-
+        System.out.println(Tabpaner.getTabs().get(numTab));
         System.out.println(numTab);
     }
 

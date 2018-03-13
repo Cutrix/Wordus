@@ -264,15 +264,31 @@ private void SaveFile(String content, File file){
     public void voirmots(ActionEvent actionEvent) {
     }
 
+    public void search (ActionEvent actionEvent) {
+        textInputDialog = new TextInputDialog();
+        textInputDialog.setTitle("Rechercher");
+        textInputDialog.setHeaderText("Rechercher un mot");
+        Optional<String> match = textInputDialog.showAndWait();
+        if (match.isPresent()) {
+            String replaceWordsByMatchesWords = htmlEditor.getHtmlText().replace(match.get(), "<span style='background-color: yellow'>"+match.get()+"</span>");
+            htmlEditor.setHtmlText(replaceWordsByMatchesWords);
+        }
+    }
+
+    public Tab getCurrentTabs() {
+        return currentTabs;
+    }
+
+
     public void Test(ActionEvent actionEvent) {
 
-        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+        //currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
         //System.out.println(getCurrentTabs());
         //---------------------------------------------------------
 
 
 
-        if (currentTabs.isSelected()) {
+        /*if (currentTabs.isSelected()) {
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
@@ -281,23 +297,9 @@ private void SaveFile(String content, File file){
             alert.showAndWait();
 
 
-        }
+        }*/
 
+        htmlEditor.setHtmlText("je <span style='background-color: yellow'>mange</span> pain");
+        System.out.println(htmlEditor.getHtmlText());
     }
-
-    public void search (ActionEvent actionEvent) {
-        textInputDialog = new TextInputDialog();
-        textInputDialog.setTitle("Rechercher");
-        textInputDialog.setHeaderText("Rechercher un mot");
-
-        Optional<String> match = textInputDialog.showAndWait();
-        if (match.isPresent()) {
-
-        }
-    }
-
-    public Tab getCurrentTabs() {
-        return currentTabs;
-    }
-
 }

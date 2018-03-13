@@ -264,12 +264,26 @@ private void SaveFile(String content, File file){
     }
 
     public void Test(ActionEvent actionEvent) {
+
         currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
-        System.out.println(getCurrentTabs());
-        //System.out.println(Tabpaner.getSelectionModel().getSelectedIndex());
+        //System.out.println(getCurrentTabs());
+        //---------------------------------------------------------
+
+
+
+        if (currentTabs.isSelected()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            Document doc = Jsoup.parseBodyFragment(htmlEditor.getHtmlText());
+            Element body = doc.body();
+            alert.setContentText(String.valueOf(body));
+            alert.showAndWait();
+
+
+        }
+
     }
 
-    public void search(ActionEvent actionEvent) {
+    public void search (ActionEvent actionEvent) {
         textInputDialog = new TextInputDialog();
         textInputDialog.setTitle("Rechercher");
         textInputDialog.setHeaderText("Rechercher un mot");

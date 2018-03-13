@@ -55,12 +55,13 @@ public class Controller {
 
     @FXML
     private void NouveauTab() {
-        Tab tab1 = new Tab("Page " + numTab);
+
+    	Tab tab1 = new Tab("Page " + numTab);
         Tabpaner.getTabs().addAll(tab1);
         HTMLEditor htmlEditor1 = new HTMLEditor();
         tab1.setContent(htmlEditor1);
         numTab = numTab + 1;
-        Document doc = Jsoup.parse(htmlEditor.getHtmlText());
+        Document doc = Jsoup.parse(htmlEditor1.getHtmlText());
         Element content = doc.tagName("body p");
         System.out.println(content.text());
     }
@@ -71,7 +72,7 @@ public class Controller {
 
     @FXML
     private void OuvrirFichier() {
-        System.out.println(numTab);
+       // System.out.println(numTab);
         Tab tab1 = new Tab("Page " + numTab);
         Tabpaner.getTabs().addAll(tab1);
       //  HTMLEditor htmlEditor0 = new HTMLEditor();
@@ -96,6 +97,7 @@ public class Controller {
     //Enregistrer un doc
     @FXML
     private void EnregistFile() {
+
         FileChooser fileChooser = new FileChooser();
 
 //Set extension filter
@@ -105,14 +107,13 @@ public class Controller {
 //Show save file dialog
         File file = fileChooser.showSaveDialog(stage);
 
-        // FileChooser fileChooser = new FileChooser();
-        // URI yourPics = selectedFile.getAbsoluteFile().toURI();
 
         if(file != null){
             Document doc = Jsoup.parseBodyFragment(htmlEditor.getHtmlText());
-            Element body = doc.body();
-            SaveFile(String.valueOf(body), file);
-         //SaveFile(htmlEditor.getHtmlText(), file);
+            //Element body = doc.body();
+            //SaveFile(String.valueOf(body), file);
+          Element content = doc.tagName("body p");
+         SaveFile(content.text(), file);
 
             //System.out.println(content);
         }
@@ -219,6 +220,7 @@ private void tester() {
 
         htmlEditor.setHtmlText(content.text() + "<img src='"+yourPics+"' style='width:300px; height: 300px'/>");
     }
+
 
     @FXML
     public void checkSyntax() {

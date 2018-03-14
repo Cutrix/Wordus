@@ -4,9 +4,14 @@ import com.wordus.essentials.Dico;
 import com.wordus.essentials.SpellChecker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
@@ -28,6 +33,8 @@ import java.util.logging.Level;
 
 public class Controller {
 
+    @FXML
+    public BorderPane borderPane;
     @FXML
     private Label statusLbl;
     @FXML
@@ -294,7 +301,17 @@ public class Controller {
     }
 
 
-    public void voirmots(ActionEvent actionEvent) {
+    public void voirmots(ActionEvent actionEvent) throws IOException {
+        try {
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../../../Dictionnaire.fxml"));
+            AnchorPane pane = (AnchorPane) loader.load();
+            borderPane.setCenter(pane);
+            System.out.println(dc.getWords());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void search(ActionEvent actionEvent) {
@@ -303,7 +320,7 @@ public class Controller {
         textInputDialog.setHeaderText("Rechercher un mot");
         Optional<String> match = textInputDialog.showAndWait();
         if (match.isPresent()) {
-            String replaceWordsByMatchesWords = htmlEditor.getHtmlText().replace(match.get(), "<span style='background-color: yellow'>" + match.get() + "</span>");
+            String replaceWordsByMatchesWords = htmlEditor.getHtmlText().replace(match.get(), "<span style='background-color: yellow'> " + match.get() + "</span> ");
             htmlEditor.setHtmlText(replaceWordsByMatchesWords);
         }
     }

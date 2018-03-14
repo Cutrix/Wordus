@@ -1,24 +1,18 @@
-System.out.println(numTab);
-        Tab tab1 = new Tab("Page " + numTab);
-        Tabpaner.getTabs().addAll(tab1);
-         HTMLEditor  htmlEditor1 = new HTMLEditor();
-        tab1.setContent(htmlEditor1);
-        numTab = numTab+1;
+for(int i=0; i<6; i++)
 
+            {
+                for(int j=0; j<6; j++)
+                    System.out.println(tableau1[i]);
+                {
+                    System.out.println(currentTabs.getText());
+                    /*if (currentTabs.getText() == tableau[i][j].toString())
+                    {
+                        System.out.println(tableau[i][j].toString());
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
+                        Element body = doc.body();
+                        alert.setContentText(String.valueOf(body));
+                        alert.showAndWait();
+                    }*/
 
-
-
-  @Override
-          public void handle(ActionEvent event) {
-              FileChooser fileChooser = new FileChooser();
-
-              //Set extension filter
-              FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("AVI files (*.avi)", "*.avi");
-              fileChooser.getExtensionFilters().add(extFilter);
-
-              //Show open file dialog
-              file = fileChooser.showOpenDialog(null);
-
-              labelFile.setText(file.getPath());
-          }
-      });
+                }

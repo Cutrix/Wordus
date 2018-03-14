@@ -54,18 +54,44 @@ public class Controller {
     TabPane Tabpaner = new TabPane();
     int numTab = 2;
     int nb = 0;
+    @FXML
+    Object[] tableau1 = new Object[5];
+    Object[] tableau2 = new Object[5];
+    int j = 0;
+    int i = 0;
+    @FXML
+    public void nameHTML(String eer) {
+         eer = "abc";
+    }
 
     @FXML
-    private void NouveauTab() {
+    public void NouveauTab() {
         Tab tab1 = new Tab("Page " + numTab);
+        HTMLEditor page1 = new HTMLEditor();
         htmlEditor1 = new HTMLEditor();
         Tabpaner.getTabs().addAll(tab1);
-        tab1.setContent(htmlEditor1);
+        tab1.setContent(page1);
         numTab = numTab + 1;
-       System.out.println( htmlEditor1.toString());
-        //Document doc = Jsoup.parse(htmlEditor.getHtmlText());
-        //Element content = doc.tagName("body p");
-        //System.out.println(content.text());
+
+
+
+
+        //les int représentés entre les crochets, représentent les lignes et colonnes
+        //du tableau à deux dimensions, respectivement
+
+
+        //Parcours lignes et colonnes pour les deux for, respectivement
+
+
+        tableau1[i] = page1;
+        System.out.println(tableau1[i]);
+
+        tableau2[j] = tab1.getText();
+        System.out.println(tableau2[j]);
+        i++;
+        j++;
+
+
     }
 
     //Ouvrir fichier
@@ -74,11 +100,11 @@ public class Controller {
 
     @FXML
     private void OuvrirFichier() {
-       // System.out.println(numTab);
+        // System.out.println(numTab);
         Tab tab1 = new Tab("Page " + numTab);
         tab1.contentProperty();
         Tabpaner.getTabs().addAll(tab1);
-      //  HTMLEditor htmlEditor1 = new HTMLEditor();
+        //  HTMLEditor htmlEditor1 = new HTMLEditor();
         tab1.setContent(htmlEditor1);
         numTab = numTab + 1;
 
@@ -96,7 +122,6 @@ public class Controller {
     }
 
 
-
     //Enregistrer un doc
     @FXML
     private void EnregistFile() {
@@ -111,28 +136,29 @@ public class Controller {
         File file = fileChooser.showSaveDialog(stage);
 
 
-        if(file != null){
+        if (file != null) {
             Document doc = Jsoup.parseBodyFragment(htmlEditor.getHtmlText());
             Element body = doc.body();
             SaveFile(String.valueOf(body), file);
-         //SaveFile(htmlEditor.getHtmlText(), file);
+            //SaveFile(htmlEditor.getHtmlText(), file);
 
             //System.out.println(content);
         }
     }
-@FXML
-private void SaveFile(String content, File file){
-    try {
-        FileWriter fileWriter = null;
 
-        fileWriter = new FileWriter(file);
-        fileWriter.write(content);
-        fileWriter.close();
-    } catch (IOException ex) {
-        Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+    @FXML
+    private void SaveFile(String content, File file) {
+        try {
+            FileWriter fileWriter = null;
+
+            fileWriter = new FileWriter(file);
+            fileWriter.write(content);
+            fileWriter.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
-
-}
 
     //Quiter l'application
     @FXML
@@ -190,7 +216,6 @@ private void SaveFile(String content, File file){
     }
 
 
-
     @FXML
     private void insertImg() {
         FileChooser fileChooser = new FileChooser();
@@ -206,7 +231,7 @@ private void SaveFile(String content, File file){
         Document doc = Jsoup.parse(htmlEditor.getHtmlText());
         Element content = doc.tagName("body p");
 
-        htmlEditor.setHtmlText(content.text() + "<img src='"+yourPics+"' style='width:300px; height: 300px'/>");
+        htmlEditor.setHtmlText(content.text() + "<img src='" + yourPics + "' style='width:300px; height: 300px'/>");
     }
 
 
@@ -215,17 +240,17 @@ private void SaveFile(String content, File file){
         sp = new SpellChecker(dc);
         htmlEditor.setOnKeyPressed(event -> {
             if (event.getCode().equals(KeyCode.SPACE)) {
-                String htmlText  = htmlEditor.getHtmlText();
+                String htmlText = htmlEditor.getHtmlText();
                 Document doc = Jsoup.parse(htmlEditor.getHtmlText());
                 Element content = doc.tagName("body p");
                 ArrayList<String> toCompares = new ArrayList<String>(Arrays.asList(content.text().split(" ")));
                 int lastWordIndex = toCompares.size();
                 String lastWordForLikely;
-                String lastWord = toCompares.get(lastWordIndex-1);
+                String lastWord = toCompares.get(lastWordIndex - 1);
                 if (lastWord.length() > SEE_FROM) {
-                    lastWordForLikely = toCompares.get(lastWordIndex-1).substring(0,3);
+                    lastWordForLikely = toCompares.get(lastWordIndex - 1).substring(0, 3);
                 } else {
-                    lastWordForLikely = toCompares.get(lastWordIndex-1).substring(0,2);
+                    lastWordForLikely = toCompares.get(lastWordIndex - 1).substring(0, 2);
                 }
 
                 ContextMenu cm = new ContextMenu();
@@ -241,12 +266,12 @@ private void SaveFile(String content, File file){
 
                 ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>();
 
-                for (int i = 0 ; i < likelyAlWrods.size() ; i++) {
+                for (int i = 0; i < likelyAlWrods.size(); i++) {
                     //System.out.println(likelyAlWrods.get(i));
                     menuItems.add(new MenuItem(likelyAlWrods.get(i)));
                     int finalI = i;
                     menuItems.get(i).setOnAction(event1 -> {
-                       //System.out.println(likelyAlWrods.get(finalI));
+                        //System.out.println(likelyAlWrods.get(finalI));
                         String replaceByLikelyWord = htmlEditor.getHtmlText().replace(lastWord, likelyAlWrods.get(finalI));
                         htmlEditor.setHtmlText(replaceByLikelyWord);
                         //System.out.println(htmlEditor.getHtmlText());
@@ -264,13 +289,13 @@ private void SaveFile(String content, File file){
     public void voirmots(ActionEvent actionEvent) {
     }
 
-    public void search (ActionEvent actionEvent) {
+    public void search(ActionEvent actionEvent) {
         textInputDialog = new TextInputDialog();
         textInputDialog.setTitle("Rechercher");
         textInputDialog.setHeaderText("Rechercher un mot");
         Optional<String> match = textInputDialog.showAndWait();
         if (match.isPresent()) {
-            String replaceWordsByMatchesWords = htmlEditor.getHtmlText().replace(match.get(), "<span style='background-color: yellow'>"+match.get()+"</span>");
+            String replaceWordsByMatchesWords = htmlEditor.getHtmlText().replace(match.get(), "<span style='background-color: yellow'>" + match.get() + "</span>");
             htmlEditor.setHtmlText(replaceWordsByMatchesWords);
         }
     }
@@ -282,24 +307,33 @@ private void SaveFile(String content, File file){
 
     public void Test(ActionEvent actionEvent) {
 
-        //currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+
+
+
+        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+
         //System.out.println(getCurrentTabs());
         //---------------------------------------------------------
 
 
-
-        /*if (currentTabs.isSelected()) {
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
-            Element body = doc.body();
-            alert.setContentText(String.valueOf(body));
-            alert.showAndWait();
+      //  while (currentTabs.isSelected() == true) {
 
 
-        }*/
 
-        htmlEditor.setHtmlText("je <span style='background-color: yellow'>mange</span> pain");
-        System.out.println(htmlEditor.getHtmlText());
-    }
+
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setContentText(currentTabs.contentProperty().toString());
+                alert.showAndWait();
+
+
+
+
+            }
+        //}
+
+
 }
+
+
+

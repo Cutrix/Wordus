@@ -251,7 +251,8 @@ public class Controller {
                 if (lastWord.length() > SEE_FROM) {
                     lastWordForLikely = toCompares.get(lastWordIndex - 1).substring(0, 3);
                 } else {
-                    lastWordForLikely = toCompares.get(lastWordIndex - 1).substring(0, 2);
+                    if (lastWord.length() == 1) lastWordForLikely = toCompares.get(lastWordIndex - 1).substring(0, 1);
+                    else lastWordForLikely = toCompares.get(lastWordIndex - 1).substring(0, 2);
                 }
 
                 ContextMenu cm = new ContextMenu();

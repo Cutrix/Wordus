@@ -2,14 +2,14 @@
 .html-editor
 {
 	-fx-font: 12 cambria;
-	-fx-border-color: blue;
+	-fx-border-color: orange;
 	-fx-border-style: solid;
 	-fx-border-width: 2;
 }
 
 .html-editor .button, .html-editor .toggle-button
 {
-	-fx-background-color: lightblue;
+	-fx-background-color: #efd00d;
 }
 
 .html-editor-background

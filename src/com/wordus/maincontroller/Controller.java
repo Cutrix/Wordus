@@ -35,6 +35,7 @@ import java.util.logging.Level;
 
 public class Controller {
 
+
     @FXML
     public BorderPane borderPane;
     @FXML
@@ -58,6 +59,7 @@ public class Controller {
     private HTMLEditor htmlEditor1;
     private Tab pan;
 
+
     // Menu gestion de saisi
     //Nouveau
     @FXML
@@ -78,10 +80,25 @@ public class Controller {
     public void NouveauTab() {
         Tab tab1 = new Tab("Page " + numTab);
         HTMLEditor page1 = new HTMLEditor();
-        htmlEditor1 = new HTMLEditor();
         Tabpaner.getTabs().addAll(tab1);
         tab1.setContent(page1);
         numTab = numTab + 1;
+        tab1.setStyle("-fx-background-color: #ffb366");
+
+        Object prop = htmlEditor.getProperties();
+        System.out.println(prop);
+
+        page1.setStyle("css/htmlEditcss/htmleditor.css");
+       /* page1.setStyle("-fx-font: 12 cambria;\n" +
+                "\t-fx-border-color: orange;\n" +
+                "\t-fx-border-style: solid;\n" +
+                "\t-fx-border-width: 2;\n" +
+                "\t-fx-background-color: #efd00d;\n" +
+                "\t-fx-color-label-visible: true;\n" +
+                "\t-fx-color-label-visible: true;");
+*/
+        page1.setPrefWidth(1323);
+        page1.setPrefHeight(200);
 
 
 
@@ -101,6 +118,10 @@ public class Controller {
 
     }
 
+    @FXML
+            private void Tabcolor(){
+        currentTabs.setStyle("-fx-background-color: #331a80");
+    }
     //Ouvrir fichier
 
     File file;
@@ -190,13 +211,13 @@ public class Controller {
     //Code pour le dictionnaire
     @FXML
     private void setLanguageFr() {
-        dc = new Dico("Fr", "dico_fr.txt");
+        dc = new Dico("Langue Française selectionée !", "dico_fr.txt");
         statusLbl.setText(dc.getLang());
     }
 
     @FXML
     private void setLanguageAng() {
-        dc = new Dico("En", "dico_ang.txt");
+        dc = new Dico("Langue Anglaise selectionée !", "dico_ang.txt");
         statusLbl.setText(dc.getLang());
     }
 

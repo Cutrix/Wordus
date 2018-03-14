@@ -6,19 +6,23 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.maincontroller.Controller">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" style="-fx-background-color: #aee2f0;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.maincontroller.Controller">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar focusTraversable="false" style="-fx-background-color: #dfa30f;" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="_Gestion de saisie">
               <MenuItem mnemonicParsing="false" onAction="#NouveauTab" text="Nouveau" />
               <MenuItem mnemonicParsing="false" onAction="#OuvrirFichier" text="Ouvrir" />
               <MenuItem mnemonicParsing="false" onAction="#EnregistFile" text="Enregistrer" />
-              <MenuItem mnemonicParsing="false" text="Enregistrer sous"  onAction="#EnregistsreSous"/>
-              <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter" />
+              <MenuItem mnemonicParsing="false" onAction="#EnregistsreSous" text="Enregistrer sous" />
+              <MenuItem mnemonicParsing="false" onAction="#quitter" style="-fx-background-color: #ffb366;" text="Quitter             " />
           </Menu>
 
             <Menu mnemonicParsing="false" text="_Insertion">
@@ -60,17 +64,42 @@
       </MenuBar>
    </top>
    <center>
-      <TabPane fx:id="Tabpaner" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
+      <TabPane fx:id="Tabpaner" onMouseDragOver="#Tabcolor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffb366;" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab text="Page 1">
+          <Tab closable="false" style="-fx-background-color: #ffb366;" text="Page 1">
                <content>
-                  <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" onKeyPressed="#checkSyntax" prefHeight="200.0" prefWidth="1323.0" />
+                  <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" onKeyPressed="#checkSyntax" prefHeight="200.0" prefWidth="1323.0" stylesheets="@css/htmlEditcss/htmleditor.css" />
                </content>
             </Tab>
         </tabs>
       </TabPane>
    </center>
    <bottom>
-      <Label fx:id="statusLbl" alignment="TOP_LEFT" prefHeight="17.0" prefWidth="749.0" text="Label" BorderPane.alignment="CENTER" />
+      <Label fx:id="statusLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="251.0" style="-fx-background-color: #aee2f0;" text="Bienvenue sur Wordus Texte Editeur" textAlignment="JUSTIFY" textFill="#2513ed" textOverrun="CENTER_WORD_ELLIPSIS" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font></Label>
    </bottom>
+   <left>
+      <Pane prefHeight="854.0" prefWidth="140.0" style="-fx-background-color: #aee2f0;" BorderPane.alignment="CENTER">
+         <effect>
+            <Glow level="0.75">
+               <input>
+                  <BoxBlur />
+               </input>
+            </Glow>
+         </effect>
+      </Pane>
+   </left>
+   <right>
+      <Pane minWidth="-Infinity" prefHeight="854.0" prefWidth="140.0" style="-fx-background-color: #aee2f0;" BorderPane.alignment="CENTER">
+         <effect>
+            <Glow level="0.75">
+               <input>
+                  <BoxBlur />
+               </input>
+            </Glow>
+         </effect>
+      </Pane>
+   </right>
 </BorderPane>

@@ -4,6 +4,7 @@ import com.wordus.essentials.Dico;
 import com.wordus.essentials.SpellChecker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
@@ -318,16 +319,12 @@ public class Controller {
 
       //  while (currentTabs.isSelected() == true) {
 
+        //Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        //alert.setContentText(currentTabs.contentProperty().toString());
+        //alert.showAndWait();
 
-
-
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setContentText(currentTabs.contentProperty().toString());
-                alert.showAndWait();
-
-
-
+        htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
+        System.out.println(htmlEditor1.getHtmlText());
 
             }
         //}

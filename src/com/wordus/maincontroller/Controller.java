@@ -77,11 +77,8 @@ public class Controller {
 
 
 
-        //les int représentés entre les crochets, représentent les lignes et colonnes
-        //du tableau à deux dimensions, respectivement
 
 
-        //Parcours lignes et colonnes pour les deux for, respectivement
 
 
         tableau1[i] = page1;
@@ -102,13 +99,13 @@ public class Controller {
     @FXML
     private void OuvrirFichier() {
         // System.out.println(numTab);
-        Tab tab1 = new Tab("Page " + numTab);
-        tab1.contentProperty();
-        Tabpaner.getTabs().addAll(tab1);
+       // Tab tab1 = new Tab("Page " + numTab);
+      //  tab1.contentProperty();
+       // Tabpaner.getTabs().addAll(tab1);
         //  HTMLEditor htmlEditor1 = new HTMLEditor();
-        tab1.setContent(htmlEditor1);
-        numTab = numTab + 1;
-
+      //  tab1.setContent(htmlEditor1);
+       // numTab = numTab + 1;
+        htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
         FileChooser fileChooser = new FileChooser();
 
 //Set extension filter

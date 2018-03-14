@@ -310,15 +310,13 @@ public class Controller {
     public void Test(ActionEvent actionEvent) {
 
 
-
-
         currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
 
         //System.out.println(getCurrentTabs());
         //---------------------------------------------------------
 
 
-      //  while (currentTabs.isSelected() == true) {
+        //  while (currentTabs.isSelected() == true) {
 
         //Alert alert = new Alert(Alert.AlertType.INFORMATION);
         //alert.setContentText(currentTabs.contentProperty().toString());
@@ -327,8 +325,25 @@ public class Controller {
         htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
         System.out.println(htmlEditor1.getHtmlText());
 
-            }
+        FileChooser fileChooser = new FileChooser();
+
+//Set extension filter
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+//Show save file dialog
+        File file = fileChooser.showSaveDialog(stage);
+
+
+        if (file != null) {
+            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
+           // Element body = doc.body();
+            Element content = doc.tagName("body p");
+            SaveFile(String.valueOf(content.text()), file);
+
+        }
         //}
+    }
 
 
 }

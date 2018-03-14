@@ -128,11 +128,21 @@ public class Controller {
         System.out.println(contenu);
         //htmlEditor0.setHtmlText(FileChooser);
     }
+    @FXML
+    private void EnregistFile(){
+
+    }
 
 
     //Enregistrer un doc
     @FXML
-    private void EnregistFile() {
+    private void EnregistsreSous() {
+
+        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+
+
+        htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
+        System.out.println(htmlEditor1.getHtmlText());
 
         FileChooser fileChooser = new FileChooser();
 
@@ -145,12 +155,11 @@ public class Controller {
 
 
         if (file != null) {
-            Document doc = Jsoup.parseBodyFragment(htmlEditor.getHtmlText());
-            Element body = doc.body();
-            SaveFile(String.valueOf(body), file);
-            //SaveFile(htmlEditor.getHtmlText(), file);
+            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
+            // Element body = doc.body();
+            Element content = doc.tagName("body p");
+            SaveFile(String.valueOf(content.text()), file);
 
-            //System.out.println(content);
         }
     }
 
@@ -328,24 +337,8 @@ public class Controller {
 
 
 
-
-        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
-
-        //System.out.println(getCurrentTabs());
-        //---------------------------------------------------------
-
-
-      //  while (currentTabs.isSelected() == true) {
-
-        //Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        //alert.setContentText(currentTabs.contentProperty().toString());
-        //alert.showAndWait();
-
-        htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
-        System.out.println(htmlEditor1.getHtmlText());
-
-            }
         //}
+    }
 
 
 }

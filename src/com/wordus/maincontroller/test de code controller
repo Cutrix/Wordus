@@ -16,3 +16,24 @@ for(int i=0; i<6; i++)
                     }*/
 
                 }
+
+
+
+                FileChooser fileChooser = new FileChooser();
+
+                //Set extension filter
+                        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+                        fileChooser.getExtensionFilters().add(extFilter);
+
+                //Show save file dialog
+                        File file = fileChooser.showSaveDialog(stage);
+
+
+                        if (file != null) {
+                            Document doc = Jsoup.parseBodyFragment(htmlEditor.getHtmlText());
+                            Element body = doc.body();
+                            SaveFile(String.valueOf(body), file);
+                            //SaveFile(htmlEditor.getHtmlText(), file);
+
+                            //System.out.println(content);
+                        }

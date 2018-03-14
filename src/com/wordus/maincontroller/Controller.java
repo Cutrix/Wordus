@@ -96,7 +96,7 @@ public class Controller {
                 "\t-fx-background-color: #efd00d;\n" +
                 "\t-fx-color-label-visible: true;\n" +
                 "\t-fx-color-label-visible: true;");
-                
+
 */
         page1.setPrefWidth(1323);
         page1.setPrefHeight(200);

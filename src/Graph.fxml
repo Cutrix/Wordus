@@ -17,7 +17,7 @@
               <MenuItem mnemonicParsing="false" onAction="#NouveauTab" text="Nouveau" />
               <MenuItem mnemonicParsing="false" onAction="#OuvrirFichier" text="Ouvrir" />
               <MenuItem mnemonicParsing="false" onAction="#EnregistFile" text="Enregistrer" />
-              <MenuItem mnemonicParsing="false" text="Enregistrer sous" />
+              <MenuItem mnemonicParsing="false" text="Enregistrer sous"  onAction="#EnregistsreSous"/>
               <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter" />
           </Menu>
 

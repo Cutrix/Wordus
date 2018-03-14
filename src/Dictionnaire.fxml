@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -21,5 +22,6 @@
             </Tab>
         </tabs>
       </TabPane>
+      <Button layoutX="197.0" layoutY="253.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="200.0" text="Wordus" />
    </children>
 </AnchorPane>

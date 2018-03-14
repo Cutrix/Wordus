@@ -2,6 +2,8 @@ package com.wordus.maincontroller;
 
 import com.wordus.essentials.Dico;
 import com.wordus.essentials.SpellChecker;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,7 +46,7 @@ public class Controller {
 
     Stage stage;
 
-    private Dico dc = new Dico();
+    public Dico dc = new Dico();
     private SpellChecker sp;
 
     private Text text;
@@ -311,7 +313,7 @@ public class Controller {
             loader.setLocation(getClass().getResource("../../../Dictionnaire.fxml"));
             AnchorPane pane = (AnchorPane) loader.load();
             borderPane.setCenter(pane);
-            System.out.println(dc.getWords());
+
         } catch (Exception e) {
             e.printStackTrace();
         }

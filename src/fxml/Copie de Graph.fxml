@@ -12,8 +12,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.HTMLEditor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" style="-fx-background-color: #aee2f0;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.maincontroller.Controller">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" style="-fx-background-color: #aee2f0;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.Controller">
    <top>
       <MenuBar focusTraversable="false" style="-fx-background-color: #dfa30f;" BorderPane.alignment="CENTER">
         <menus>
@@ -68,7 +70,7 @@
         <tabs>
           <Tab closable="false" style="-fx-background-color: #ffb366;" text="Page 1">
                <content>
-                  <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" onKeyPressed="#checkSyntax" prefHeight="200.0" prefWidth="1323.0" stylesheets="@css/htmlEditcss/htmleditor.css" />
+                  <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" onKeyPressed="#checkSyntax" prefHeight="200.0" prefWidth="1323.0" stylesheets="@../css/htmlEditcss/htmleditor.css" />
                </content>
             </Tab>
         </tabs>

@@ -35,6 +35,7 @@ import java.util.logging.Logger;
 public class Controller {
 
 
+
     @FXML
     public BorderPane borderPane;
     @FXML
@@ -84,7 +85,7 @@ public class Controller {
         numTab = numTab + 1;
         tab1.setStyle("-fx-background-color: #ffb366");
 
-        //page1.setStyle("/css/htmlEditcss/htmleditor.css");
+
         page1.getStylesheets().add(getClass().getResource("/css/htmlEditcss/htmleditor.css").toExternalForm());
 
         page1.setPrefWidth(1323);
@@ -99,6 +100,7 @@ public class Controller {
         i++;
         j++;
 
+        
 
     }
 

@@ -84,28 +84,11 @@ public class Controller {
         numTab = numTab + 1;
         tab1.setStyle("-fx-background-color: #ffb366");
 
-        Object prop = htmlEditor.getProperties();
-        System.out.println(prop);
+        //page1.setStyle("/css/htmlEditcss/htmleditor.css");
+        page1.getStylesheets().add(getClass().getResource("/css/htmlEditcss/htmleditor.css").toExternalForm());
 
-        page1.setStyle("/css/htmlEditcss/htmleditor.css");
-        //page1.getStylesheets().add(getClass().getResource("/css/htmlEditcss/htmleditor.css").toExternalForm());
-       /* page1.setStyle("-fx-font: 12 cambria;\n" +
-                "\t-fx-border-color: orange;\n" +
-                "\t-fx-border-style: solid;\n" +
-                "\t-fx-border-width: 2;\n" +
-                "\t-fx-background-color: #efd00d;\n" +
-                "\t-fx-color-label-visible: true;\n" +
-                "\t-fx-color-label-visible: true;");
-
-*/
         page1.setPrefWidth(1323);
         page1.setPrefHeight(200);
-
-
-
-
-
-
 
 
         tableau1[i] = page1;
@@ -260,10 +243,7 @@ public class Controller {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
-                new FileChooser.ExtensionFilter("Text Files", "*.txt"),
-                new FileChooser.ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
-                new FileChooser.ExtensionFilter("All Files", "*.*"));
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
         File selectedFile = fileChooser.showOpenDialog(stage);
         URI yourPics = selectedFile.getAbsoluteFile().toURI();
 

@@ -364,7 +364,36 @@ public class Controller {
         System.out.println(SQLEssentials.init());
     }
 
+    //GESTION DE LA BASE DE DONNEE
+    @FXML
+    private void createTable() {
+        AlertBox.displayCreateTable();
+    }
 
+    @FXML
+    private void updateTable() {
+        AlertBox.displayCreateTable();
+    }
+
+    @FXML
+    private void dropTable() {
+        AlertBox.displayDropTable();
+    }
+
+    @FXML
+    private void selectData() {
+        AlertBox.displaySelectData();
+    }
+
+    @FXML
+    private void insertData() {
+        AlertBox.displayInsertData();
+    }
+
+    @FXML
+    private void deleteData() {
+        AlertBox.displayDeleteData();
+    }
 }
 
 

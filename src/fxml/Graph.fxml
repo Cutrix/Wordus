@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="900.0" style="-fx-background-color: #aee2f0;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.Controller">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: #aee2f0;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.Controller">
    <top>
       <MenuBar focusTraversable="false" style="-fx-background-color: #dfa30f;" BorderPane.alignment="CENTER">
         <menus>
@@ -22,7 +22,7 @@
               <MenuItem mnemonicParsing="false" onAction="#OuvrirFichier" text="Ouvrir" />
               <MenuItem mnemonicParsing="false" onAction="#EnregistFile" text="Enregistrer" />
               <MenuItem mnemonicParsing="false" onAction="#EnregistsreSous" text="Enregistrer sous" />
-              <MenuItem mnemonicParsing="false" onAction="#quitter" style="-fx-background-color: #ffb366;" text="Quitter"/>
+              <MenuItem mnemonicParsing="false" onAction="#quitter" style="-fx-background-color: #ffb366;" text="Quitter" />
           </Menu>
 
             <Menu mnemonicParsing="false" text="_Insertion">
@@ -44,9 +44,23 @@
             </Menu>
 
             <Menu mnemonicParsing="false" text="_SQL">
-                <MenuItem mnemonicParsing="false" text="Creer une bdd" />
-                <MenuItem mnemonicParsing="false" text="voir la bddd" />
+                <Menu mnemonicParsing="false" text="Table">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#createTable" text="Créer une table" />
+                        <MenuItem mnemonicParsing="false" onAction="#dropTable" text="Supprimer une table" />
+                        <MenuItem mnemonicParsing="false" onAction="#updateTable" text="Mettre à jour une  table" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Donnée">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#selectData" text="Selectionner des données" />
+                        <MenuItem mnemonicParsing="false" onAction="#insertData" text="Inserer des données " />
+                        <MenuItem mnemonicParsing="false" onAction="#deleteData" text="Supprimer des données" />
+                    </items>
+                </Menu>
+
             </Menu>
+
             <Menu mnemonicParsing="false" text="Outils">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#checkSyntax" text="verifier la syntaxe" />
@@ -75,7 +89,7 @@
       </TabPane>
    </center>
    <bottom>
-      <Label fx:id="statusLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="251.0" style="-fx-background-color: #aee2f0;" text="Bienvenue sur Wordus Texte Editeur" textAlignment="JUSTIFY" textFill="#2513ed" textOverrun="CENTER_WORD_ELLIPSIS" BorderPane.alignment="CENTER">
+      <Label fx:id="statusLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="268.0" style="-fx-background-color: #aee2f0;" text="Bienvenue sur Wordus Texte Editeur" textAlignment="JUSTIFY" textFill="#2513ed" textOverrun="CENTER_WORD_ELLIPSIS" BorderPane.alignment="CENTER">
          <font>
             <Font name="Comic Sans MS Bold" size="14.0" />
          </font></Label>

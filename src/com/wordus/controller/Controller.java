@@ -251,7 +251,7 @@ public class Controller {
     @FXML
     private void updateWord() {
         //dc.update("jouer", "boire");
-        Modal.showMdalRessource("../../../UpdateDicoWord.fxml");
+        Modal.showMdalRessource("../../../fxml/UpdateDicoWord.fxml");
     }
 
 
@@ -340,7 +340,7 @@ public class Controller {
         } catch (Exception e) {
             e.printStackTrace();
         }*/
-        Modal.showMdalRessource("../../../Dictionnaire.fxml");
+        Modal.showMdalRessource("../../../fxml/Dictionnaire.fxml");
     }
 
     public void search(ActionEvent actionEvent) {

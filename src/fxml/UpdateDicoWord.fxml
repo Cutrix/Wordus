@@ -17,6 +17,6 @@
             <BoxBlur width="0.0" />
          </effect>
       </Label>
-      <Button id="btnUpdate" fx:id="modifierMot" layoutX="98.0" layoutY="204.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="303.0" text="Modifier" />
+      <Button id="btnUpdate" fx:id="modifierMot" layoutX="98.0" layoutY="204.0" mnemonicParsing="false" onAction="#updateWord" prefHeight="26.0" prefWidth="303.0" text="Modifier" />
    </children>
 </AnchorPane>

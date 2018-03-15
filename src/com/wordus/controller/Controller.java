@@ -1,9 +1,9 @@
 package com.wordus.controller;
 
 
+import com.wordus.essentials.AlertBox;
 import com.wordus.essentials.Dico;
 import com.wordus.essentials.Modal;
-import com.wordus.essentials.SQLEssentials;
 import com.wordus.essentials.SpellChecker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -88,7 +88,7 @@ public class Controller {
         System.out.println(prop);
 
         page1.setStyle("/css/htmlEditcss/htmleditor.css");
-        page1.getStylesheets().add(getClass().getResource("/css/htmlEditcss/htmleditor.css").toExternalForm());
+        //page1.getStylesheets().add(getClass().getResource("/css/htmlEditcss/htmleditor.css").toExternalForm());
        /* page1.setStyle("-fx-font: 12 cambria;\n" +
                 "\t-fx-border-color: orange;\n" +
                 "\t-fx-border-style: solid;\n" +
@@ -361,7 +361,6 @@ public class Controller {
 
     public void Test(ActionEvent actionEvent) {
         //LEssentials.init()
-        System.out.println(SQLEssentials.init());
     }
 
     //GESTION DE LA BASE DE DONNEE

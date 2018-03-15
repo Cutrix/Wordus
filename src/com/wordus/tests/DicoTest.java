@@ -1,14 +1,22 @@
 package com.wordus.tests;
 
-import junit.framework.TestCase;
+import com.wordus.essentials.Dico;
+
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class DicoTest extends TestCase{
+public class DicoTest{
+    @Test
+    public void DetectWordTest() {
 
-    public void testDetectWord() {
-        String test = "Yoa";
-        assertTrue(test == "Yoa");
+        Dico test= new Dico();
+       String word1= "bidi";
+       String word2= "bidi";
+       assertEquals(test.detectWord(word1),test.detectWord(word2));
     }
+
+
+
 
 }

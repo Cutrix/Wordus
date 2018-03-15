@@ -17,7 +17,7 @@ public class App_main extends Application{
         primaryStage.setTitle("Wordus");
 		primaryStage.show();
 		//icon
- 		primaryStage.getIcons().add(new Image("font\\icon\\text-editor.png"));
+// 		primaryStage.getIcons().add(new Image("font\\icon\\text-editor.png"));
 
 
 		//HtmlEditor css

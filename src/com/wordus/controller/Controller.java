@@ -2,6 +2,8 @@ package com.wordus.controller;
 
 
 import com.wordus.essentials.Dico;
+import com.wordus.essentials.Modal;
+import com.wordus.essentials.SQLEssentials;
 import com.wordus.essentials.SpellChecker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -247,7 +250,8 @@ public class Controller {
 
     @FXML
     private void updateWord() {
-        dc.update("jouer", "boire");
+        //dc.update("jouer", "boire");
+        Modal.showMdalRessource("../../../UpdateDicoWord.fxml");
     }
 
 
@@ -323,7 +327,7 @@ public class Controller {
 
 
     public void voirmots(ActionEvent actionEvent) throws IOException {
-        try {
+        /*try {
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/fxml/Dictionnaire.fxml"));
@@ -335,7 +339,8 @@ public class Controller {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
+        Modal.showMdalRessource("../../../Dictionnaire.fxml");
     }
 
     public void search(ActionEvent actionEvent) {
@@ -355,10 +360,7 @@ public class Controller {
 
 
     public void Test(ActionEvent actionEvent) {
-
-
-
-        //}
+        //LEssentials.init()
     }
 
 

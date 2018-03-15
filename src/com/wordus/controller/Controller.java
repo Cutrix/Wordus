@@ -112,13 +112,7 @@ public class Controller {
 
     @FXML
     private void OuvrirFichier() {
-        // System.out.println(numTab);
-       // Tab tab1 = new Tab("Page " + numTab);
-      //  tab1.contentProperty();
-       // Tabpaner.getTabs().addAll(tab1);
-        //  HTMLEditor htmlEditor1 = new HTMLEditor();
-      //  tab1.setContent(htmlEditor1);
-       // numTab = numTab + 1;
+
         htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
         FileChooser fileChooser = new FileChooser();
 
@@ -374,6 +368,3 @@ public class Controller {
         AlertBox.displayDeleteData();
     }
 }
-
-
-

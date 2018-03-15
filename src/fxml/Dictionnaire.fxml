@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="858.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.DictionnaireController">
    <children>
-      <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="802.0" prefWidth="819.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="802.0" prefWidth="819.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="frTab" text="Francais">
                <content>

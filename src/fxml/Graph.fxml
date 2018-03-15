@@ -275,7 +275,7 @@
             </Menu>
             <Menu mnemonicParsing="false" text="_Aide">
               <items>
-                <MenuItem mnemonicParsing="false" text="A propos">
+                <MenuItem mnemonicParsing="false" onAction="#Apros" text="A propos">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>

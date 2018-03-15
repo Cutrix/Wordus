@@ -8,6 +8,8 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -18,62 +20,296 @@
       <MenuBar focusTraversable="false" style="-fx-background-color: #dfa30f;" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="_Gestion de saisie">
-              <MenuItem mnemonicParsing="false" onAction="#NouveauTab" text="Nouveau" />
-              <MenuItem mnemonicParsing="false" onAction="#OuvrirFichier" text="Ouvrir" />
-              <MenuItem mnemonicParsing="false" onAction="#EnregistFile" text="Enregistrer" />
-              <MenuItem mnemonicParsing="false" onAction="#EnregistsreSous" text="Enregistrer sous" />
-              <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter" />
+              <MenuItem mnemonicParsing="false" onAction="#NouveauTab" text="Nouveau">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic></MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#OuvrirFichier" text="Ouvrir">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic></MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#EnregistFile" text="Enregistrer">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic></MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#EnregistsreSous" text="Enregistrer sous">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic></MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic></MenuItem>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../font/svg/Jellyfish.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
           </Menu>
 
             <Menu mnemonicParsing="false" text="_Insertion">
-                <MenuItem mnemonicParsing="false" onAction="#insertImg" text="Image" />
+                <MenuItem mnemonicParsing="false" onAction="#insertImg" text="Image">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic></MenuItem>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../font/svg/Jellyfish.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Menu>
 
 
             <Menu mnemonicParsing="false" text="_Dictionnaire +">
-               <MenuItem mnemonicParsing="false" onAction="#voirmots" text="voir les mots" />
+               <MenuItem mnemonicParsing="false" onAction="#voirmots" text="voir les mots">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic></MenuItem>
                <Menu mnemonicParsing="false" text="Selection de langue">
                  <items>
-                     <MenuItem mnemonicParsing="false" onAction="#setLanguageFr" text="Fr" />
-                   <MenuItem mnemonicParsing="false" onAction="#setLanguageAng" text="Ang" />
+                     <MenuItem mnemonicParsing="false" onAction="#setLanguageFr" text="Fr">
+                        <graphic>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                              </image>
+                           </ImageView>
+                        </graphic></MenuItem>
+                   <MenuItem mnemonicParsing="false" onAction="#setLanguageAng" text="Ang">
+                        <graphic>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                              </image>
+                           </ImageView>
+                        </graphic></MenuItem>
                  </items>
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic>
                </Menu>
-                <MenuItem mnemonicParsing="false" onAction="#ajoutMot" text="Ajout de nouveau mot" />
-                <MenuItem mnemonicParsing="false" onAction="#updateWord" text="Modification du mot existant" />
-                <MenuItem mnemonicParsing="false" onAction="#delWord" text="Suppression de mot" />
+                <MenuItem mnemonicParsing="false" onAction="#ajoutMot" text="Ajout de nouveau mot">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic></MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#updateWord" text="Modification du mot existant">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic></MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#delWord" text="Suppression de mot">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic></MenuItem>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../font/svg/Jellyfish.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Menu>
 
             <Menu mnemonicParsing="false" text="_SQL">
                 <Menu mnemonicParsing="false" text="Table">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#createTable" text="Créer une table" />
-                        <MenuItem mnemonicParsing="false" onAction="#dropTable" text="Supprimer une table" />
-                        <MenuItem mnemonicParsing="false" onAction="#updateTable" text="Mettre à jour une  table" />
+                        <MenuItem mnemonicParsing="false" onAction="#createTable" text="Créer une table">
+                        <graphic>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                              </image>
+                           </ImageView>
+                        </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#dropTable" text="Supprimer une table">
+                        <graphic>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                              </image>
+                           </ImageView>
+                        </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#updateTable" text="Mettre à jour une  table">
+                        <graphic>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                              </image>
+                           </ImageView>
+                        </graphic></MenuItem>
                     </items>
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Donnée">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#selectData" text="Selectionner des données" />
-                        <MenuItem mnemonicParsing="false" onAction="#insertData" text="Inserer des données " />
-                        <MenuItem mnemonicParsing="false" onAction="#deleteData" text="Supprimer des données" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectData" text="Selectionner des données">
+                        <graphic>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                              </image>
+                           </ImageView>
+                        </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#insertData" text="Inserer des données ">
+                        <graphic>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                              </image>
+                           </ImageView>
+                        </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#deleteData" text="Supprimer des données">
+                        <graphic>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                              </image>
+                           </ImageView>
+                        </graphic></MenuItem>
                     </items>
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../font/svg/Jellyfish.jpg" />
+                        </image>
+                     </ImageView>
+                  </graphic>
                 </Menu>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../font/svg/Jellyfish.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
 
             </Menu>
 
-            <Menu mnemonicParsing="false" text="Outils">
+            <Menu mnemonicParsing="false" text="_Outils">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#checkSyntax" text="verifier la syntaxe" />
-                  <MenuItem mnemonicParsing="false" onAction="#search" text="Rechercher" />
-                  <MenuItem mnemonicParsing="false" onAction="#Test" text="Test" />
+                <MenuItem mnemonicParsing="false" onAction="#checkSyntax" text="verifier la syntaxe">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../font/svg/Jellyfish.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#search" text="Rechercher">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../font/svg/Jellyfish.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Test" text="Test">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../font/svg/Jellyfish.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
               </items>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../font/svg/Jellyfish.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Menu>
-
-          <Menu mnemonicParsing="false" text="_Aide">
-
-              <MenuItem mnemonicParsing="false" text="A propos" />
-
-          </Menu>
+            <Menu mnemonicParsing="false" text="_Aide">
+              <items>
+                <MenuItem mnemonicParsing="false" text="A propos">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../font/svg/Jellyfish.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Manuel">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../font/svg/Jellyfish.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Contactez nous !">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../font/svg/Jellyfish.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+              </items>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../font/svg/Jellyfish.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

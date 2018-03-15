@@ -21,6 +21,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -33,6 +34,7 @@ import java.util.logging.Logger;
 
 
 public class Controller {
+
 
 
     @FXML
@@ -84,7 +86,7 @@ public class Controller {
         numTab = numTab + 1;
         tab1.setStyle("-fx-background-color: #ffb366");
 
-        //page1.setStyle("/css/htmlEditcss/htmleditor.css");
+
         page1.getStylesheets().add(getClass().getResource("/css/htmlEditcss/htmleditor.css").toExternalForm());
 
         page1.setPrefWidth(1323);
@@ -99,6 +101,7 @@ public class Controller {
         i++;
         j++;
 
+        
 
     }
 
@@ -129,6 +132,12 @@ public class Controller {
     @FXML
     private void EnregistFile(){
 
+    }
+
+    @FXML
+    public void Apros(){
+        String  s="MEMBRES DU GROUPE:          BIDI PAUL      BOUA LEANDRE     DIBI BRICE      KOFFI SANDRA        YESSO LINDA     ZIE ALASANE";
+        JOptionPane.showMessageDialog(null,s);
     }
 
 

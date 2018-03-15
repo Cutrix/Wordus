@@ -40,8 +40,18 @@ public class AlertBox {
         
         TextArea textarea=new TextArea();
         textarea.setText("CREATE TABLE [nom_table] (\n"
-                + "champ 1 typeDEDonnee,\n"
-                + "champ 2 typeDeDonnee2\n)");
+                +        "champ 1 typeDEDonnee,\n"
+                +        "champ 2 typeDeDonnee2\n)");
+
+        /*textarea.setText("CREATE TABLE COMPANY (" +
+                           " ID INT PRIMARY KEY     NOT NULL,\n" +
+                           " NAME           TEXT    NOT NULL,\n " +
+                           " AGE            INT     NOT NULL,\n " +
+                           " ADDRESS        CHAR(50),\n " +
+                           " SALARY         REAL)");*/
+
+        //System.out.println(textarea.getText());
+        //System.exit(0);
         
         Button btn=new Button("Executer Votre Requête");
         btn.setOnAction(e-> {
@@ -50,6 +60,8 @@ public class AlertBox {
                 Statement state = conn.createStatement();
                 String query = textarea.getText();
                 ResultSet result = state.executeQuery(query);
+
+                System.out.println("Table creer");
 
                 if(result.next()){
                     AlertBox.box("Succes","VOTRE REQUÊTE S'EST EXECUTEE AVEC SUCCES");
@@ -257,11 +269,12 @@ public class AlertBox {
     private static Connection connection(){
         Connection conn=null;
         try{
-            Class.forName("org.sqlite.Driver");
-            String url = "jdbc:sqlite://localhost:5432/Miage";
-            String user = "miage";
-            String passwd = "";
-            conn = DriverManager.getConnection(url, user, passwd);
+            Class.forName("org.sqlite.JDBC");
+            String url = "jdbc:sqlite:test.db";
+            /*String user = "miage";
+            String passwd = "";*/
+            conn = DriverManager.getConnection(url);
+            System.out.println("Connexion reussie");
             
         }catch(Exception e){
             e.printStackTrace();

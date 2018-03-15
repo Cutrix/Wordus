@@ -4,16 +4,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.SVGPath?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="476.0" stylesheets="" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.UpdateDicoWordController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="476.0" stylesheets="" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.UpdateDicoWordController">
    <children>
       <Label layoutX="106.0" layoutY="100.0" text="Ancien mot" />
       <TextField fx:id="tfOldWord" layoutX="215.0" layoutY="95.0" />
       <Label layoutX="99.0" layoutY="165.0" text="Nouveau mot" />
       <TextField fx:id="tfNewWord" layoutX="215.0" layoutY="160.0" />
-      <Label id="lblTitle" alignment="CENTER" contentDisplay="CENTER" layoutX="143.0" layoutY="51.0" prefHeight="16.0" prefWidth="249.0" text="Modification d'un mot du dico" />
+      <Label id="lblTitle" alignment="CENTER" contentDisplay="CENTER" layoutX="125.0" layoutY="54.0" prefHeight="16.0" prefWidth="249.0" text="Modification d'un mot du dico" />
       <Button id="btnUpdate" fx:id="modifierMot" layoutX="98.0" layoutY="204.0" mnemonicParsing="false" onAction="#updateWord" prefHeight="26.0" prefWidth="303.0" text="Modifier" />
-      <SVGPath content="M40,60 C42,48 44,30 25,32" layoutX="89.0" layoutY="13.0" />
    </children>
 </AnchorPane>

@@ -6,13 +6,12 @@
 <?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="476.0" stylesheets="@CSS/modifierMot.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="476.0" stylesheets="@CSS/modifierMot.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UpdateDicoWordController">
    <children>
       <Label layoutX="106.0" layoutY="100.0" text="Ancien mot" />
-      <TextField id="tfOldWord" layoutX="215.0" layoutY="95.0" />
+      <TextField fx:id="tfOldWord" layoutX="215.0" layoutY="95.0" />
       <Label layoutX="99.0" layoutY="165.0" text="Nouveau mot" />
-      <TextField id="tfNewWord" layoutX="215.0" layoutY="160.0" />
+      <TextField fx:id="tfNewWord" layoutX="215.0" layoutY="160.0" />
       <Label id="lblTitle" alignment="CENTER" contentDisplay="CENTER" layoutX="101.0" layoutY="49.0" prefHeight="16.0" prefWidth="249.0" text="Modification d'un mot du dico">
          <effect>
             <BoxBlur width="0.0" />

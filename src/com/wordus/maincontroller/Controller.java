@@ -361,6 +361,7 @@ public class Controller {
 
     public void Test(ActionEvent actionEvent) {
         //LEssentials.init()
+        System.out.println(SQLEssentials.init());
     }
 
 

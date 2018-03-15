@@ -39,16 +39,15 @@ public class AlertBox {
         Label label=new Label("Votre Requête SQL");
         
         TextArea textarea=new TextArea();
-        textarea.setText("CREATE TABLE [nom_table] (\n"
+        /*textarea.setText("CREATE TABLE [nom_table] (\n"
                 +        "champ 1 typeDEDonnee,\n"
-                +        "champ 2 typeDeDonnee2\n)");
+                +        "champ 2 typeDeDonnee2\n)");*/
 
-        /*textarea.setText("CREATE TABLE COMPANY (" +
-                           " ID INT PRIMARY KEY     NOT NULL,\n" +
-                           " NAME           TEXT    NOT NULL,\n " +
-                           " AGE            INT     NOT NULL,\n " +
-                           " ADDRESS        CHAR(50),\n " +
-                           " SALARY         REAL)");*/
+        textarea.setText("CREATE TABLE RITA ( \n" +
+                "ID PRIMARY KEY NOT NULL,\n" +
+                "NOM TEXT NOT NULL,\n" +
+                "PRENOM TEXT NOT NULL\n" +
+                ")");
 
         //System.out.println(textarea.getText());
         //System.exit(0);
@@ -180,6 +179,10 @@ public class AlertBox {
                 String query = textarea.getText();
                 ResultSet result = state.executeQuery(query);
 
+                while (result.next()) {
+                    System.out.println(result.getString("NOM"));
+                }
+
                 if(result.next()){
                     AlertBox.box("Succes","VOTRE REQUÊTE S'EST EXECUTEE AVEC SUCCES");
                 }else{
@@ -192,6 +195,7 @@ public class AlertBox {
         Label label2=new Label("Votre Resultat ");
         
         TableView table=new TableView();
+
         
         VBox layout=new VBox();
         layout.getChildren().addAll(label,textarea,btn,label2);

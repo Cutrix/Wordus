@@ -25,6 +25,10 @@ public class UpdateDicoWordController implements Initializable {
 
     public void updateWord(ActionEvent actionEvent) {
 
-       //dc.update(tfOldWord.getCharacters(), tfNewWord.getCharacters());
+       String oldWord = tfOldWord.getCharacters().toString();
+       String newWord = tfNewWord.getCharacters().toString();
+
+       dc.update(oldWord, newWord);
+
     }
 }

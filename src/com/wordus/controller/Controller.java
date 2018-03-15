@@ -327,7 +327,7 @@ public class Controller {
 
 
     public void voirmots(ActionEvent actionEvent) throws IOException {
-        try {
+        /*try {
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/fxml/Dictionnaire.fxml"));

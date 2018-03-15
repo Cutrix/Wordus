@@ -5,10 +5,11 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DictionnaireController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.DictionnaireController">
    <children>
-      <TabPane prefHeight="200.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="-14.0" prefHeight="200.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="frTab" text="Francais">
                <content>
@@ -22,6 +23,9 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button layoutX="197.0" layoutY="253.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="200.0" text="Wordus" />
+      <Button layoutX="194.0" layoutY="255.0" mnemonicParsing="false" onAction="#back" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: orange;" text="Wordus US" textAlignment="CENTER" textFill="#3300ff">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>

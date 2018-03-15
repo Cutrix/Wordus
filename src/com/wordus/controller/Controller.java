@@ -1,15 +1,11 @@
-package com.wordus.maincontroller;
+package com.wordus.controller;
+
 
 import com.wordus.essentials.Dico;
 import com.wordus.essentials.SpellChecker;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
@@ -18,19 +14,19 @@ import javafx.scene.text.Text;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
-import java.io.*;
-import java.util.logging.Logger;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Controller {
@@ -88,7 +84,8 @@ public class Controller {
         Object prop = htmlEditor.getProperties();
         System.out.println(prop);
 
-        page1.setStyle("css/htmlEditcss/htmleditor.css");
+        page1.setStyle("/css/htmlEditcss/htmleditor.css");
+        page1.getStylesheets().add(getClass().getResource("/css/htmlEditcss/htmleditor.css").toExternalForm());
        /* page1.setStyle("-fx-font: 12 cambria;\n" +
                 "\t-fx-border-color: orange;\n" +
                 "\t-fx-border-style: solid;\n" +
@@ -329,9 +326,12 @@ public class Controller {
         try {
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../../../Dictionnaire.fxml"));
+            loader.setLocation(getClass().getResource("/fxml/Dictionnaire.fxml"));
             AnchorPane pane = (AnchorPane) loader.load();
+            pane.autosize();
             borderPane.setCenter(pane);
+
+            statusLbl.setText("Votre Dictionnaire personnel");
 
         } catch (Exception e) {
             e.printStackTrace();

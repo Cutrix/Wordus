@@ -1,7 +1,5 @@
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
@@ -13,7 +11,7 @@ public class App_main extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		try {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Graph.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/Graph.fxml"));
 
         primaryStage.setScene(new Scene(loader.load()));
         primaryStage.setTitle("Wordus");

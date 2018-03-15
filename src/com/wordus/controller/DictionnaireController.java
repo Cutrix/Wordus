@@ -1,12 +1,15 @@
+package com.wordus.controller;
 
 import com.wordus.essentials.Dico;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.AnchorPane;
@@ -29,6 +32,7 @@ public class DictionnaireController implements Initializable{
     public ListView frLv;
 
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -48,13 +52,16 @@ public class DictionnaireController implements Initializable{
     public void back(ActionEvent actionEvent) {
 
         try {
-            Parent myWordus = FXMLLoader.load(getClass().getResource("Graph.fxml"));
+            Parent myWordus = FXMLLoader.load(getClass().getResource("/fxml/Graph.fxml"));
             Scene sceneWordus = new Scene(myWordus);
             Stage app_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             app_stage.setScene(sceneWordus);
             app_stage.show();
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }

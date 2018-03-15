@@ -1,3 +1,5 @@
+package com.wordus.controller;
+
 import com.wordus.essentials.Dico;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -23,5 +25,6 @@ public class UpdateDicoWordController implements Initializable {
 
     public void updateWord(ActionEvent actionEvent) {
 
+       //dc.update(tfOldWord.getCharacters(), tfNewWord.getCharacters());
     }
 }

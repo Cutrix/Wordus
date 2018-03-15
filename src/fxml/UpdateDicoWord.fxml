@@ -6,7 +6,7 @@
 <?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="476.0" stylesheets="@CSS/modifierMot.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UpdateDicoWordController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="476.0" stylesheets="" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.UpdateDicoWordController">
    <children>
       <Label layoutX="106.0" layoutY="100.0" text="Ancien mot" />
       <TextField fx:id="tfOldWord" layoutX="215.0" layoutY="95.0" />

@@ -327,7 +327,7 @@ public class Controller {
 
 
     public void voirmots(ActionEvent actionEvent) throws IOException {
-        /*try {
+        try {
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/fxml/Dictionnaire.fxml"));
@@ -339,8 +339,9 @@ public class Controller {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }*/
-        Modal.showMdalRessource("../../../Dictionnaire.fxml");
+        }
+
+        Modal.showMdalRessource("/fxml/Dictionnaire.fxml");
     }
 
     public void search(ActionEvent actionEvent) {

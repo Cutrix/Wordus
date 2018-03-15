@@ -87,8 +87,8 @@ public class Controller {
         Object prop = htmlEditor.getProperties();
         System.out.println(prop);
 
-        page1.setStyle("/css/htmlEditcss/htmleditor.css");
-        //page1.getStylesheets().add(getClass().getResource("/css/htmlEditcss/htmleditor.css").toExternalForm());
+        //page1.setStyle("/css/htmlEditcss/htmleditor.css");
+        page1.getStylesheets().add(getClass().getResource("/css/htmlEditcss/htmleditor.css").toExternalForm());
        /* page1.setStyle("-fx-font: 12 cambria;\n" +
                 "\t-fx-border-color: orange;\n" +
                 "\t-fx-border-style: solid;\n" +

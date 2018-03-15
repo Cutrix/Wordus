@@ -22,7 +22,7 @@
               <MenuItem mnemonicParsing="false" onAction="#OuvrirFichier" text="Ouvrir" />
               <MenuItem mnemonicParsing="false" onAction="#EnregistFile" text="Enregistrer" />
               <MenuItem mnemonicParsing="false" onAction="#EnregistsreSous" text="Enregistrer sous" />
-              <MenuItem mnemonicParsing="false" onAction="#quitter" style="-fx-background-color: #ffb366;" text="               Quitter                                          " />
+              <MenuItem mnemonicParsing="false" onAction="#quitter" text="Quitter" />
           </Menu>
 
             <Menu mnemonicParsing="false" text="_Insertion">

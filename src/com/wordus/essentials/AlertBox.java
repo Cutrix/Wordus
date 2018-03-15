@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -12,6 +15,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class AlertBox {
+
+    private String[] colums;
     
     public static void box(String title,String message){
         Stage window=new Stage();
@@ -170,7 +175,7 @@ public class AlertBox {
         
         TextArea textarea=new TextArea();
         textarea.setText("SELECT * FROM [nom_table] WHERE [condition]");
-        
+        Label label2 = new Label("Votre resultat");
         Button btn=new Button("Executer Votre Requête");
         btn.setOnAction(e-> { 
             try{
@@ -179,9 +184,30 @@ public class AlertBox {
                 String query = textarea.getText();
                 ResultSet result = state.executeQuery(query);
 
-                while (result.next()) {
-                    System.out.println(result.getString("NOM"));
+                ArrayList<String> alMyColumns = new ArrayList<>();
+                //System.out.println(AlertBox.getColumnCount(result));
+                //System.out.println(AlertBox.getColumnNameArray(result));
+                for (int i = 0 ; i < AlertBox.getColumnCount(result) ; i++) {
+                    //System.out.println(AlertBox.getColumnNameArray(result)[i].join(", "));
+                    alMyColumns.add(AlertBox.getColumnNameArray(result)[i]);
                 }
+
+                //System.out.println(String.join(", ", alMyColumns));
+
+                String[] myColumns = new String[alMyColumns.size()];
+                myColumns = alMyColumns.toArray(myColumns);
+
+
+
+                while (result.next()) {
+
+                    for (int c = 0 ; c < alMyColumns.size() ; c++) {
+                        System.out.println(result.getString(myColumns[c]));
+                        label2.setText(result.getString(myColumns[c]));
+                    }
+                    System.out.println("---------------------------------");
+                }
+
 
                 if(result.next()){
                     AlertBox.box("Succes","VOTRE REQUÊTE S'EST EXECUTEE AVEC SUCCES");
@@ -192,7 +218,7 @@ public class AlertBox {
             }catch(Exception ex){ex.printStackTrace();}
         });
         
-        Label label2=new Label("Votre Resultat ");
+
         
         TableView table=new TableView();
 
@@ -204,7 +230,36 @@ public class AlertBox {
         window.setScene(scene);
         window.show();
     }
-    
+
+    private static String[] getColumnNameArray(ResultSet rs) {
+        String myArr[] = null;
+        try {
+            ResultSetMetaData rm = rs.getMetaData();
+            myArr = new String[rm.getColumnCount()];
+            for (int ctr = 1; ctr <= myArr.length; ctr++) {
+                String s = rm.getColumnName(ctr);
+                myArr[ctr - 1] = s;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            return myArr;
+        }
+        return myArr;
+    }
+
+    private static int getColumnCount(ResultSet rs) {
+        int iOutput = 0;
+        try {
+            ResultSetMetaData rsMetaData = rs.getMetaData();
+            iOutput = rsMetaData.getColumnCount();
+
+        } catch (Exception e) {
+            System.out.println(e);
+            return iOutput = -1;
+        }
+        return iOutput;
+    }
+
     public static void displayInsertData(){
         Stage window=new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
@@ -285,5 +340,6 @@ public class AlertBox {
         }
         return conn;
     }
+
     
 }

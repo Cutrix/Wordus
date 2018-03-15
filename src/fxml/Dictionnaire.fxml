@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.DictionnaireController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.DictionnaireController">
    <children>
       <TabPane prefHeight="500.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -14,7 +14,7 @@
                   <ListView fx:id="frLv" prefHeight="269.0" prefWidth="600.0" />
                </content>
             </Tab>
-          <Tab fx:id="enTab" text="English">
+          <Tab fx:id="enTab" text="English ">
                <content>
                   <ListView fx:id="enLv" prefHeight="758.0" prefWidth="809.0" />
                </content>

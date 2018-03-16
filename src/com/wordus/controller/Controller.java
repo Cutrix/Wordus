@@ -263,6 +263,7 @@ public class Controller implements Initializable{
 
     @FXML
     public void checkSyntax() {
+
         sp = new SpellChecker(dc);
         htmlEditor.setOnKeyPressed(event -> {
             if (event.getCode().equals(KeyCode.SPACE)) {
@@ -273,6 +274,7 @@ public class Controller implements Initializable{
                 int lastWordIndex = toCompares.size();
                 String lastWordForLikely;
                 String lastWord = toCompares.get(lastWordIndex - 1);
+
                 if (lastWord.length() > SEE_FROM) {
                     lastWordForLikely = toCompares.get(lastWordIndex - 1).substring(0, 3);
                 } else {
@@ -305,7 +307,6 @@ public class Controller implements Initializable{
 
                     });
                 }
-
                 cm.getItems().addAll(menuItems);
                 htmlEditor.setContextMenu(cm);
             }

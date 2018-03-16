@@ -5,9 +5,9 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.DictionnaireController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #7ec5dd;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.DictionnaireController">
    <children>
-      <TabPane prefHeight="500.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: http://bluebuddies.com/gallery/title/jpg/Smurf_Fun_100x100.jpg;" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="frTab" text="Francais">
                <content>

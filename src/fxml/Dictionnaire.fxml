@@ -6,44 +6,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<<<<<<< HEAD
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #7ec5dd;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.DictionnaireController">
-   <children>
-      <TabPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: http://bluebuddies.com/gallery/title/jpg/Smurf_Fun_100x100.jpg;" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab fx:id="frTab" text="Francais">
-               <content>
-                  <ListView fx:id="frLv" prefHeight="269.0" prefWidth="600.0" />
-               </content>
-            </Tab>
-          <Tab fx:id="enTab" text="English ">
-               <content>
-                  <ListView fx:id="enLv" prefHeight="758.0" prefWidth="809.0" />
-               </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-=======
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.DictionnaireController">
-   <children>
-      <BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0">
-         <center>
-            <TabPane prefHeight="500.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="306.0" prefWidth="500.0" style="-fx-background-color: #7ec5dd;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.DictionnaireController">
+   <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="500.0">
+      <top>
+            <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: http://bluebuddies.com/gallery/title/jpg/Smurf_Fun_100x100.jpg;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
                 <Tab fx:id="frTab" text="Francais">
                      <content>
-                        <ListView fx:id="frLv" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="259.0" prefWidth="497.0" />
+                        <ListView fx:id="frLv" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="272.0" prefWidth="500.0" />
                      </content>
                   </Tab>
                 <Tab fx:id="enTab" text="English ">
                      <content>
-                        <ListView fx:id="enLv" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="497.0" />
+                        <ListView fx:id="enLv" prefHeight="758.0" prefWidth="809.0" />
                      </content>
                   </Tab>
               </tabs>
             </TabPane>
-         </center>
-      </BorderPane>
->>>>>>> d452a94b2668ebfd6aa3280710d2760e7296b845
-   </children>
+      </top>
+   </BorderPane>
 </AnchorPane>

@@ -39,10 +39,6 @@ import java.util.logging.Logger;
 
 public class Controller implements Initializable{
 
-    @Override
-    public void inita
-
-
 
     @FXML
     public BorderPane borderPane;

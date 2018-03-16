@@ -24,9 +24,7 @@ import org.jsoup.nodes.Element;
 import org.w3c.dom.DOMImplementation;
 
 import javax.swing.*;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
@@ -120,7 +118,7 @@ public class Controller implements Initializable{
     @FXML
     private void OuvrirFichier() {
 
-        htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
+        /*htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
         FileChooser fileChooser = new FileChooser();
 
 //Set extension filter
@@ -130,8 +128,33 @@ public class Controller implements Initializable{
 //Show open file dialog
         file = fileChooser.showOpenDialog(null);
         String contenu = file.toString();
-        System.out.println(contenu);
+        System.out.println(contenu);*/
         //htmlEditor0.setHtmlText(FileChooser);
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+        File selectedFile = fileChooser.showOpenDialog(stage);
+        if (selectedFile != null) {
+
+            try {
+                InputStream flux = new FileInputStream(selectedFile.getAbsoluteFile().toString());
+                InputStreamReader lecture = new InputStreamReader(flux);
+                BufferedReader buff = new BufferedReader(lecture);
+                String line;
+                String output = null;
+
+                while ((line = buff.readLine()) != null) {
+                    output += line;
+                }
+                htmlEditor.setHtmlText(output);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
     @FXML
     private void EnregistFile(){

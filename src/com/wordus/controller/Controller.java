@@ -388,11 +388,7 @@ public class Controller implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-<<<<<<< HEAD
 
-
-=======
         System.out.println("Clementine");
->>>>>>> 128b4ed47e211072414641cfe2835135fd9771ca
     }
 }

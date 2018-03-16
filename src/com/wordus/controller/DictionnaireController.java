@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -46,7 +47,9 @@ public class DictionnaireController implements Initializable{
         ObservableList<String> names = FXCollections.observableArrayList(alWordsAn);
         enLv.setItems(names);
 
+
     }
+    
 
 
     public void back(ActionEvent actionEvent) {

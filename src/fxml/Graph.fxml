@@ -316,7 +316,7 @@
    <center>
       <TabPane fx:id="Tabpaner" onMouseDragOver="#Tabcolor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffb366;" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab closable="false" style="-fx-background-color: #ffb366;" text="Page 1">
+          <Tab closable="false" style="-fx-background-color: orange;" text="Page 1">
                <content>
                   <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" onKeyPressed="#checkSyntax" prefHeight="200.0" prefWidth="1323.0" stylesheets="@../css/htmlEditcss/htmleditor.css" />
                </content>

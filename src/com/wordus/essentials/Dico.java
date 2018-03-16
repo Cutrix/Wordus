@@ -53,7 +53,7 @@ public class Dico {
         if (detectWord(word)) {
             ArrayList<String> al = new ArrayList<String>(Arrays.asList(this.getAllWords()));
             al.remove(word);
-            String[] newDico = new String[al.size()-1];
+            String[] newDico = new String[al.size()];
             newDico = al.toArray(newDico);
             try {
                 fw = new FileWriter(PATH_DICO+dico);

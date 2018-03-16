@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -169,6 +171,7 @@ public class AlertBox {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Sélection De Donnée");
         window.setMinWidth(200);
+        ListView<String> listView = new ListView<>();
         
         
         Label label=new Label("Votre Requête SQL");
@@ -192,21 +195,24 @@ public class AlertBox {
                     alMyColumns.add(AlertBox.getColumnNameArray(result)[i]);
                 }
 
+
                 //System.out.println(String.join(", ", alMyColumns));
 
                 String[] myColumns = new String[alMyColumns.size()];
                 myColumns = alMyColumns.toArray(myColumns);
 
-
+                ArrayList<String> valuesColumns = new ArrayList<>();
 
                 while (result.next()) {
 
                     for (int c = 0 ; c < alMyColumns.size() ; c++) {
-                        System.out.println(result.getString(myColumns[c]));
-                        label2.setText(result.getString(myColumns[c]));
+                        //System.out.println(result.getString(myColumns[c]));
+                        valuesColumns.add(result.getString(myColumns[c]));
                     }
-                    System.out.println("---------------------------------");
                 }
+
+                ObservableList<String> nameSQL = FXCollections.observableArrayList(valuesColumns);
+                listView.setItems(nameSQL);
 
 
                 if(result.next()){
@@ -224,7 +230,7 @@ public class AlertBox {
 
         
         VBox layout=new VBox();
-        layout.getChildren().addAll(label,textarea,btn,label2);
+        layout.getChildren().addAll(label,textarea,btn,label2,listView);
         
         Scene scene =new Scene(layout);
         window.setScene(scene);

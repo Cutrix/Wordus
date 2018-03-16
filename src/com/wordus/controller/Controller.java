@@ -92,6 +92,7 @@ public class Controller implements Initializable{
 
         page1.getStylesheets().add(getClass().getResource("/css/htmlEditcss/htmleditor.css").toExternalForm());
 
+
         page1.setPrefWidth(1323);
         page1.setPrefHeight(200);
 
@@ -380,9 +381,14 @@ public class Controller implements Initializable{
         AlertBox.displayDeleteData();
     }
 
+    @FXML
+    private void actifcolor() {
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        currentTabs.setText("azo");
+
     }
 }

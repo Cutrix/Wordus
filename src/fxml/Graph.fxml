@@ -56,14 +56,14 @@
                   <graphic>
                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../font/svg/Jellyfish.jpg" />
+                           <Image url="@../font/svg/exit.png" />
                         </image>
                      </ImageView>
                   </graphic></MenuItem>
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../font/svg/Jellyfish.jpg" />
+                        <Image url="@../font/svg/53505.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -314,7 +314,7 @@
       </MenuBar>
    </top>
    <center>
-      <TabPane fx:id="Tabpaner" onMouseDragOver="#Tabcolor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffb366;" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
+      <TabPane fx:id="Tabpaner" onMouseClicked="#actifcolor" onMouseDragOver="#Tabcolor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffb366;" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
         <tabs>
           <Tab closable="false" style="-fx-background-color: orange;" text="Page 1">
                <content>

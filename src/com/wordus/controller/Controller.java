@@ -148,6 +148,7 @@ public class Controller implements Initializable{
                     output += line;
                 }
                 htmlEditor.setHtmlText(output);
+                currentTabs.getContent().
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -276,7 +277,7 @@ public class Controller implements Initializable{
                 new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
         File selectedFile = fileChooser.showOpenDialog(stage);
         URI yourPics = selectedFile.getAbsoluteFile().toURI();
-
+ zerèk,
         Document doc = Jsoup.parse(htmlEditor.getHtmlText());
         Element content = doc.tagName("body p");
 

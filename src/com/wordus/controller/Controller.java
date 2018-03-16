@@ -8,6 +8,7 @@ import com.wordus.essentials.SpellChecker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
@@ -20,6 +21,7 @@ import javafx.stage.Stage;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.w3c.dom.DOMImplementation;
 
 import javax.swing.*;
 import java.io.File;
@@ -33,7 +35,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class Controller {
+public class Controller implements Initializable {
+
+    @Override
+    public void inita
 
 
 

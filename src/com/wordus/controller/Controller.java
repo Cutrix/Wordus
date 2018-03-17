@@ -262,7 +262,7 @@ public class Controller implements Initializable{
     @FXML
     private void updateWord() {
         //dc.update("jouer", "boire");
-        Modal.showMdalRessource("../../../fxml/UpdateDicoWord.fxml");
+        Modal.showMdalRessource("../../../fxml/UpdateDicoWord.fxml", "Modification des mots du dictionnaire");
     }
 
 
@@ -349,7 +349,7 @@ public class Controller implements Initializable{
         } catch (Exception e) {
             e.printStackTrace();
         }*/
-        Modal.showMdalRessource("../../../fxml/Dictionnaire.fxml");
+        Modal.showMdalRessource("../../../fxml/Dictionnaire.fxml", "Mots du dictionnaire");
     }
 
     public void search(ActionEvent actionEvent) {

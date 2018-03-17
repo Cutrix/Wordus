@@ -10,11 +10,11 @@ import java.io.IOException;
 
 public class Modal {
 
-    public static void showMdalRessource(String res) {
+    public static void showMdalRessource(String res, String title) {
         try {
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle("Modification des mots du dico");
+        stage.setTitle(title);
         stage.setMinWidth(250);
             stage.getIcons().add(new Image("font/icon/text-editor.png"));
 

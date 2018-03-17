@@ -95,7 +95,6 @@ public class Controller implements Initializable{
 
 
         tableau1[i] = page1;
-        System.out.println(tableau1[i]);
 
         tableau2[j] = tab1.getText();
         System.out.println(tableau2[j]);
@@ -146,7 +145,7 @@ public class Controller implements Initializable{
                     output += line;
                 }
                 htmlEditor.setHtmlText(output);
-                currentTabs.getContent().getParent();
+                System.out.println(output);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {

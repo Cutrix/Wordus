@@ -85,10 +85,10 @@ public class Controller implements Initializable{
         Tabpaner.getTabs().addAll(tab1);
         tab1.setContent(page1);
         numTab = numTab + 1;
-        tab1.setStyle("-fx-background-color: #ffb366");
-
+        //tab1.setStyle("-fx-background-color: #e6e6e6");
 
         page1.getStylesheets().add(getClass().getResource("/css/htmlEditcss/htmleditor.css").toExternalForm());
+        Tabpaner.getStylesheets().add(getClass().getResource("/css/tabePane/tabPane.css").toExternalForm());
 
 
         page1.setPrefWidth(1323);
@@ -103,7 +103,6 @@ public class Controller implements Initializable{
         i++;
         j++;
 
-        
 
     }
 

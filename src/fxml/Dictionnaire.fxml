@@ -9,14 +9,14 @@
 <AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="500.0" style="-fx-background-color: #7ec5dd;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.DictionnaireController">
    <BorderPane layoutY="-72.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="500.0" style="-fx-background-color: #7ec5dd;">
       <center>
-            <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="500.0" style="-fx-background-color: #7ec5dd;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="500.0" stylesheets="@../css/tapPane/tabPane.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
-                <Tab fx:id="frTab" style="-fx-background-color: orange;" text="Francais">
+                <Tab fx:id="frTab" text="Francais">
                      <content>
                         <ListView fx:id="frLv" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="500.0" />
                      </content>
                   </Tab>
-                <Tab fx:id="enTab" style="-fx-background-color: orange;" text="English ">
+                <Tab fx:id="enTab" text="English ">
                      <content>
                         <ListView fx:id="enLv" prefHeight="758.0" prefWidth="809.0" />
                      </content>

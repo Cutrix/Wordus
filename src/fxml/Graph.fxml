@@ -314,9 +314,9 @@
       </MenuBar>
    </top>
    <center>
-      <TabPane fx:id="Tabpaner" onMouseClicked="#actifcolor" onMouseDragOver="#Tabcolor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffb366;" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
+      <TabPane fx:id="Tabpaner" onMouseClicked="#actifcolor" onMouseDragOver="#Tabcolor" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/tapPane/tabPane.css" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab closable="false" style="-fx-background-color: orange;" text="Page 1">
+          <Tab closable="false" text="Page 1">
                <content>
                   <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" onKeyPressed="#checkSyntax" prefHeight="200.0" prefWidth="1323.0" stylesheets="@../css/htmlEditcss/htmleditor.css" />
                </content>
@@ -325,9 +325,9 @@
       </TabPane>
    </center>
    <bottom>
-      <Label fx:id="statusLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="268.0" style="-fx-background-color: #aee2f0;" text="Bienvenue sur Wordus Texte Editeur" textAlignment="JUSTIFY" textFill="#2513ed" textOverrun="CENTER_WORD_ELLIPSIS" BorderPane.alignment="CENTER">
+      <Label fx:id="statusLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="268.0" style="-fx-background-color: #aee2f0;" text="Bienvenue sur Wordus Texte Editeur" textAlignment="JUSTIFY" textFill="#1f316b" textOverrun="CENTER_WORD_ELLIPSIS" BorderPane.alignment="CENTER">
          <font>
-            <Font name="Comic Sans MS Bold" size="14.0" />
+            <Font name="Comic Sans MS" size="13.0" />
          </font></Label>
    </bottom>
    <left>

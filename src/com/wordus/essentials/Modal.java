@@ -2,6 +2,7 @@ package com.wordus.essentials;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -15,6 +16,7 @@ public class Modal {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Modification des mots du dico");
         stage.setMinWidth(250);
+            stage.getIcons().add(new Image("font/icon/text-editor.png"));
 
         FXMLLoader loader = new FXMLLoader(Modal.class.getResource(res));
 

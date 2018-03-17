@@ -7,7 +7,6 @@ import com.wordus.essentials.Modal;
 import com.wordus.essentials.SpellChecker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;

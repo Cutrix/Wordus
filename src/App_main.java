@@ -4,8 +4,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 
-import java.io.File;
-
 
 public class App_main extends Application{
 

@@ -128,7 +128,7 @@ public class Controller implements Initializable{
         System.out.println(contenu);*/
         //htmlEditor0.setHtmlText(FileChooser);
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Resource File");
+        fileChooser.setTitle("Ouvrir un fichier");
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         File selectedFile = fileChooser.showOpenDialog(stage);
@@ -369,6 +369,39 @@ public class Controller implements Initializable{
 
 
     public void Test(ActionEvent actionEvent) {
+
+    	 FileChooser fileChooser = new FileChooser();
+         fileChooser.setTitle("Open Resource File");
+         fileChooser.getExtensionFilters().addAll(
+                 new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+         File selectedFile = fileChooser.showOpenDialog(stage);
+         if (selectedFile != null) {
+
+             try {
+                 InputStream flux = new FileInputStream(selectedFile.getAbsoluteFile().toString());
+                 InputStreamReader lecture = new InputStreamReader(flux);
+                 BufferedReader buff = new BufferedReader(lecture);
+                 String line;
+                 String output = null;
+
+                 while ((line = buff.readLine()) != null) {
+                     output += line;
+                 }
+                 currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+
+
+                 htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
+
+                 htmlEditor1.setHtmlText(output);
+
+                 System.out.println(output);
+             } catch (FileNotFoundException e) {
+                 e.printStackTrace();
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+
+         }
         //LEssentials.init()
     }
 

@@ -1,5 +1,6 @@
 Landry
 
+0) Resoudre le bug de l ajout d'un nouveau mot
 1) Gerer les "null" a l'affichage 
 2) Essayer de souiligner le mot pour le correcteur
 3) Ajouter de l'autocompletion avec les mots du Dico pour a suppression ou le 

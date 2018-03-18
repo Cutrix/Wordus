@@ -264,10 +264,12 @@ public class Controller implements Initializable{
         textInputDialog.setTitle("Suppression du dictionnaire");
         textInputDialog.setHeaderText("Supprimer dans le dictionnaire");
 
+
         Optional<String> mot = textInputDialog.showAndWait();
         if (mot.isPresent()) {
             dc.del(mot.get());
             statusLbl.setText("Mot supprimer");
+            System.out.println(textInputDialog.getEditor().getCharacters());
         }
     }
 

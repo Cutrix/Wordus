@@ -42,6 +42,7 @@ public class AlertBox {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Creation d'une table");
         window.setMinWidth(200);
+        window.getIcons().add(new Image("font/icon/text-editor.png"));
         
         Label label=new Label("Votre Requête SQL");
         
@@ -93,6 +94,7 @@ public class AlertBox {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Modification d'une table");
         window.setMinWidth(200);
+        window.getIcons().add(new Image("font/icon/text-editor.png"));
         
         Label label=new Label("Votre Requête SQL");
         
@@ -131,6 +133,7 @@ public class AlertBox {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Suppression d'une table");
         window.setMinWidth(200);
+        window.getIcons().add(new Image("font/icon/text-editor.png"));
         
         
         Label label=new Label("Votre Requête SQL");
@@ -171,6 +174,7 @@ public class AlertBox {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Sélection De Donnée");
         window.setMinWidth(200);
+        window.getIcons().add(new Image("font/icon/text-editor.png"));
         ListView<String> listView = new ListView<>();
         
         
@@ -235,6 +239,7 @@ public class AlertBox {
         Scene scene =new Scene(layout);
         window.setScene(scene);
         window.show();
+        window.getIcons().add(new Image("font/icon/text-editor.png"));
     }
 
     private static String[] getColumnNameArray(ResultSet rs) {
@@ -271,6 +276,7 @@ public class AlertBox {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Insertion De Donnée");
         window.setMinWidth(200);
+        window.getIcons().add(new Image("font/icon/text-editor.png"));
         
         Label label=new Label("Votre Requête SQL");
         
@@ -303,6 +309,7 @@ public class AlertBox {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Suppression De Donnée");
         window.setMinWidth(200);
+        window.getIcons().add(new Image("font/icon/text-editor.png"));
         
         Label label=new Label("Votre Requête SQL");
         
@@ -329,6 +336,7 @@ public class AlertBox {
         Scene scene =new Scene(layout);
         window.setScene(scene);
         window.show();
+        window.getIcons().add(new Image("font/icon/text-editor.png"));
     }
     
     private static Connection connection(){

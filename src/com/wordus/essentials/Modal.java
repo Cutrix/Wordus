@@ -16,7 +16,7 @@ public class Modal {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle(title);
         stage.setMinWidth(250);
-            stage.getIcons().add(new Image("font/icon/text-editor.png"));
+        stage.getIcons().add(new Image("font/icon/text-editor.png"));
 
         FXMLLoader loader = new FXMLLoader(Modal.class.getResource(res));
 

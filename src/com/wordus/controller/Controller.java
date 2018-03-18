@@ -8,7 +8,9 @@ import com.wordus.essentials.SpellChecker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -159,32 +161,41 @@ public class Controller implements Initializable{
     }
 
 
+    @FXML
+    public void bool(){
+        return ;
+    }
     //Enregistrer un doc
     @FXML
     private void EnregistsreSous() {
 
-        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+        boolean saved = false;
+
+        if (saved) {
+            currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
 
 
-        htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
-        System.out.println(htmlEditor1.getHtmlText());
+            htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
+            System.out.println(htmlEditor1.getHtmlText());
 
-        FileChooser fileChooser = new FileChooser();
+            FileChooser fileChooser = new FileChooser();
 
 //Set extension filter
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
-        fileChooser.getExtensionFilters().add(extFilter);
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+            fileChooser.getExtensionFilters().add(extFilter);
 
 //Show save file dialog
-        File file = fileChooser.showSaveDialog(stage);
+            File file = fileChooser.showSaveDialog(stage);
 
 
-        if (file != null) {
-            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
-            // Element body = doc.body();
-            Element content = doc.tagName("body p");
-            SaveFile(String.valueOf(content.text()), file);
+            if (file != null) {
+                Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
+                // Element body = doc.body();
+                Element content = doc.tagName("body p");
+                SaveFile(String.valueOf(content.text()), file);
+                saved = true;
 
+            }
         }
     }
 
@@ -229,13 +240,21 @@ public class Controller implements Initializable{
     @FXML
     private void ajoutMot() {
         textInputDialog = new TextInputDialog();
-        textInputDialog.setTitle("Ajout dictionnaire");
+        textInputDialog.setTitle("Dictionnaire");
         textInputDialog.setHeaderText("Ajouter dans le dictionnaire");
+
+        // Get the Stage.
+        Stage stage1 = (Stage) textInputDialog.getDialogPane().getScene().getWindow();
+
+// Add a custom icon.
+        //stage1.getIcons().add(new Image(this.getClass().getResource("font/icon/text-editor.png").toString()));
+       stage1.getIcons().add(new Image("font/icon/text-editor.png"));
+
 
         Optional<String> mot = textInputDialog.showAndWait();
         if (mot.isPresent()) {
             dc.add(mot.get());
-            statusLbl.setText("Mot Ajoute");
+            statusLbl.setText("Mot ajouté");
         }
     }
 
@@ -362,6 +381,34 @@ public class Controller implements Initializable{
 
 
     public void Test(ActionEvent actionEvent) {
+
+
+
+        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+
+
+        htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
+        System.out.println(htmlEditor1.getHtmlText());
+
+        FileChooser fileChooser = new FileChooser();
+
+
+
+//Set extension filter
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+//Show save file dialog
+        File file = fileChooser.showSaveDialog(stage);
+
+
+        if (file != null) {
+            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
+            // Element body = doc.body();
+            Element content = doc.tagName("body p");
+            SaveFile(String.valueOf(content.text()), file);
+
+        }
 
 
         //LEssentials.init()

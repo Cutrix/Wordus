@@ -128,7 +128,7 @@ public class Controller implements Initializable{
                 InputStreamReader lecture = new InputStreamReader(flux);
                 BufferedReader buff = new BufferedReader(lecture);
                 String line;
-                String output = null;
+                String output = "";
 
                 while ((line = buff.readLine()) != null) {
                     output += line;
@@ -171,7 +171,7 @@ public class Controller implements Initializable{
 
         boolean saved = false;
 
-        if (saved) {
+        if (saved == false) {
             currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
 
 

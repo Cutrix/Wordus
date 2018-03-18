@@ -5,6 +5,7 @@ import com.wordus.essentials.AlertBox;
 import com.wordus.essentials.Dico;
 import com.wordus.essentials.Modal;
 import com.wordus.essentials.SpellChecker;
+import javafx.beans.InvalidationListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -358,6 +359,7 @@ public class Controller implements Initializable{
 
 
     public void voirmots(ActionEvent actionEvent) throws IOException {
+        statusLbl.setText("Dictionnaire");
         /*try {
 
             FXMLLoader loader = new FXMLLoader();
@@ -372,6 +374,7 @@ public class Controller implements Initializable{
             e.printStackTrace();
         }*/
         Modal.showMdalRessource("../../../fxml/Dictionnaire.fxml", "Mots du dictionnaire");
+        statusLbl.setText("Bienvenue sur Wordus Texte Editeur");
     }
 
     public void search(ActionEvent actionEvent) {
@@ -391,37 +394,15 @@ public class Controller implements Initializable{
 
 
     public void Test(ActionEvent actionEvent) {
-
-
-
         currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
-
-
         htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
-        System.out.println(htmlEditor1.getHtmlText());
 
-        FileChooser fileChooser = new FileChooser();
-
+        htmlEditor1.getProperties().addListener((InvalidationListener) observable -> System.out.println("Champ d'édition modifié !"));
 
 
-//Set extension filter
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
-        fileChooser.getExtensionFilters().add(extFilter);
-
-//Show save file dialog
-        File file = fileChooser.showSaveDialog(stage);
 
 
-        if (file != null) {
-            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
-            // Element body = doc.body();
-            Element content = doc.tagName("body p");
-            SaveFile(String.valueOf(content.text()), file);
 
-        }
-
-
-        //LEssentials.init()
     }
 
     //GESTION DE LA BASE DE DONNEE
@@ -462,6 +443,8 @@ public class Controller implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
 
 
     }

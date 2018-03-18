@@ -261,8 +261,13 @@ public class Controller implements Initializable{
     @FXML
     private void delWord() {
         textInputDialog = new TextInputDialog();
-        textInputDialog.setTitle("Suppression du dictionnaire");
+        textInputDialog.setTitle("Dictionnaire");
         textInputDialog.setHeaderText("Supprimer dans le dictionnaire");
+        Stage stage1 = (Stage) textInputDialog.getDialogPane().getScene().getWindow();
+
+// Add a custom icon.
+        //stage1.getIcons().add(new Image(this.getClass().getResource("font/icon/text-editor.png").toString()));
+        stage1.getIcons().add(new Image("font/icon/text-editor.png"));
 
 
         Optional<String> mot = textInputDialog.showAndWait();
@@ -276,6 +281,7 @@ public class Controller implements Initializable{
     @FXML
     private void updateWord() {
         //dc.update("jouer", "boire");
+
         Modal.showMdalRessource("../../../fxml/UpdateDicoWord.fxml", "Modification des mots du dictionnaire");
     }
 

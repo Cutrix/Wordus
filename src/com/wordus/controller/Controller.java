@@ -393,7 +393,30 @@ public class Controller implements Initializable{
 
     public void Test(ActionEvent actionEvent) {
 
+        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+        htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
+        System.out.println(htmlEditor1.getHtmlText());
 
+        FileChooser fileChooser = new FileChooser();
+
+//Set extension filter
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+//Show save file dialog
+       // File file = fileChooser.showSaveDialog(stage);
+
+
+
+            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
+            // Element body = doc.body();
+            Element content = doc.tagName("body p");
+            SaveFile(String.valueOf(content.text()), file);
+
+
+       /* String localfile = file.getPath();
+        System.out.println(localfile);
+*/
 
 
 

@@ -18,7 +18,7 @@ public class App_main extends Application{
 		primaryStage.show();
 		//icon
 		//primaryStage.getIcons().add(new Image("font\\icon\\text-editor.png"));
-		primaryStage.getIcons().add(new Image("font/icon/wemo_d.gif"));
+		primaryStage.getIcons().add(new Image("font/icon/text-editor.png"));
 
 
 		//HtmlEditor css

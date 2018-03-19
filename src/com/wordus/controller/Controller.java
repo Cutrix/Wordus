@@ -20,6 +20,7 @@ import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -29,6 +30,7 @@ import javax.swing.*;
 import java.io.*;
 import java.net.URI;
 import java.net.URL;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
@@ -75,10 +77,11 @@ public class Controller implements Initializable{
     Object[] tableau2 = new Object[5];
     int j = 0;
     int i = 0;
+
     @FXML
-    public void nameHTML(String eer) {
-         eer = "abc";
-    }
+    String localfile = new String();
+
+
 
     @FXML
     public void NouveauTab() {
@@ -170,14 +173,9 @@ public class Controller implements Initializable{
     }
     //Enregistrer un doc
     @FXML
-    private void EnregistsreSous() {
+    public void EnregistsreSous() {
 
-        boolean saved = false;
-
-        if (saved == false) {
             currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
-
-
             htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
             System.out.println(htmlEditor1.getHtmlText());
 
@@ -196,10 +194,10 @@ public class Controller implements Initializable{
                 // Element body = doc.body();
                 Element content = doc.tagName("body p");
                 SaveFile(String.valueOf(content.text()), file);
-                saved = true;
-
             }
-        }
+
+            String localfile = file.getPath();
+            System.out.println(localfile);
     }
 
     @FXML
@@ -394,10 +392,7 @@ public class Controller implements Initializable{
 
 
     public void Test(ActionEvent actionEvent) {
-        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
-        htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
 
-        htmlEditor1.getProperties().addListener((InvalidationListener) observable -> System.out.println("Champ d'édition modifié !"));
 
 
 

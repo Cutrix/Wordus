@@ -93,7 +93,7 @@
                   <graphic>
                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../font/svg/dic.png" />
+                           <Image url="@../font/svg/icons8-abc-50.png" />
                         </image>
                      </ImageView>
                   </graphic></MenuItem>
@@ -103,7 +103,7 @@
                         <graphic>
                            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../font/svg/FR1.gif" />
+                                 <Image url="@../font/svg/FR1.png" />
                               </image>
                            </ImageView>
                         </graphic></MenuItem>
@@ -144,7 +144,7 @@
                   <graphic>
                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../font/svg/bad.jpg" />
+                           <Image url="@../font/svg/bad.png" />
                         </image>
                      </ImageView>
                   </graphic></MenuItem>
@@ -164,7 +164,7 @@
                         <graphic>
                            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                                 <Image url="@../font/svg/Jellyfish.png" />
                               </image>
                            </ImageView>
                         </graphic></MenuItem>
@@ -199,7 +199,7 @@
                         <graphic>
                            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                                 <Image url="@../font/svg/Jellyfish.png" />
                               </image>
                            </ImageView>
                         </graphic></MenuItem>
@@ -207,7 +207,7 @@
                         <graphic>
                            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                                 <Image url="@../font/svg/Jellyfish.png" />
                               </image>
                            </ImageView>
                         </graphic></MenuItem>
@@ -215,7 +215,7 @@
                         <graphic>
                            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../font/svg/Jellyfish.jpg" />
+                                 <Image url="@../font/svg/Jellyfish.png" />
                               </image>
                            </ImageView>
                         </graphic></MenuItem>
@@ -223,7 +223,7 @@
                   <graphic>
                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../font/svg/Jellyfish.jpg" />
+                           <Image url="@../font/svg/Jellyfish.png" />
                         </image>
                      </ImageView>
                   </graphic>
@@ -244,7 +244,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../font/svg/Jellyfish.jpg" />
+                              <Image url="@../font/svg/Jellyfish.png" />
                            </image>
                         </ImageView>
                      </graphic></MenuItem>
@@ -260,7 +260,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../font/svg/Jellyfish.jpg" />
+                              <Image url="@../font/svg/Jellyfish.png" />
                            </image>
                         </ImageView>
                      </graphic></MenuItem>
@@ -279,7 +279,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../font/svg/Jellyfish.jpg" />
+                              <Image url="@../font/svg/Jellyfish.png" />
                            </image>
                         </ImageView>
                      </graphic></MenuItem>
@@ -287,7 +287,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../font/svg/Jellyfish.jpg" />
+                              <Image url="@../font/svg/Jellyfish.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -296,7 +296,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../font/svg/Jellyfish.jpg" />
+                              <Image url="@../font/svg/Jellyfish.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -305,7 +305,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../font/svg/Jellyfish.jpg" />
+                        <Image url="@../font/svg/Jellyfish.png" />
                      </image>
                   </ImageView>
                </graphic>

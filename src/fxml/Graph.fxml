@@ -128,7 +128,7 @@
                   <graphic>
                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../font/svg/Jellyfish.jpg" />
+                           <Image url="@../font/svg/add-button-md.png" />
                         </image>
                      </ImageView>
                   </graphic></MenuItem>
@@ -136,7 +136,7 @@
                   <graphic>
                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../font/svg/Jellyfish.jpg" />
+                           <Image url="@../font/svg/edit-280px.png" />
                         </image>
                      </ImageView>
                   </graphic></MenuItem>
@@ -164,7 +164,7 @@
                         <graphic>
                            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../font/svg/Jellyfish.png" />
+                                 <Image url="@../font/svg/52481.png" />
                               </image>
                            </ImageView>
                         </graphic></MenuItem>
@@ -199,7 +199,7 @@
                         <graphic>
                            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../font/svg/Jellyfish.png" />
+                                 <Image url="@../font/svg/symbole-de-base-de-donnees_318-9131.png" />
                               </image>
                            </ImageView>
                         </graphic></MenuItem>
@@ -207,7 +207,7 @@
                         <graphic>
                            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../font/svg/Jellyfish.png" />
+                                 <Image url="@../font/svg/base-de-donnees_318-46481.png" />
                               </image>
                            </ImageView>
                         </graphic></MenuItem>
@@ -215,7 +215,7 @@
                         <graphic>
                            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../font/svg/Jellyfish.png" />
+                                 <Image url="@../font/svg/base-de-donnees-de-cartes-de-visite_318-63784.png" />
                               </image>
                            </ImageView>
                         </graphic></MenuItem>
@@ -223,7 +223,7 @@
                   <graphic>
                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../font/svg/Jellyfish.png" />
+                           <Image url="@../font/svg/52469.png" />
                         </image>
                      </ImageView>
                   </graphic>
@@ -244,7 +244,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../font/svg/Jellyfish.png" />
+                              <Image url="@../font/svg/ob_c41c9d_a-z.png" />
                            </image>
                         </ImageView>
                      </graphic></MenuItem>
@@ -260,7 +260,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../font/svg/Jellyfish.png" />
+                              <Image url="@../font/svg/exam-512.png" />
                            </image>
                         </ImageView>
                      </graphic></MenuItem>
@@ -279,7 +279,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../font/svg/Jellyfish.png" />
+                              <Image url="@../font/svg/information-1481584_960_720.png" />
                            </image>
                         </ImageView>
                      </graphic></MenuItem>
@@ -287,7 +287,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../font/svg/Jellyfish.png" />
+                              <Image url="@../font/svg/user-manual.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -296,7 +296,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../font/svg/Jellyfish.png" />
+                              <Image url="@../font/svg/Contact_Cifec.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -305,7 +305,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../font/svg/Jellyfish.png" />
+                        <Image url="@../font/svg/question-mark-310100_960_720.png" />
                      </image>
                   </ImageView>
                </graphic>

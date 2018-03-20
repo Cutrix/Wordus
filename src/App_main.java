@@ -1,8 +1,11 @@
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
+import javafx.stage.StageStyle;
+
 
 
 public class App_main extends Application{
@@ -19,6 +22,7 @@ public class App_main extends Application{
 		//icon
 		//primaryStage.getIcons().add(new Image("font\\icon\\text-editor.png"));
 		primaryStage.getIcons().add(new Image("font/icon/text-editor.png"));
+
 
 
 		//HtmlEditor css

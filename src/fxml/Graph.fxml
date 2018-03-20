@@ -17,7 +17,7 @@
 
 <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #aee2f0;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.Controller">
    <top>
-      <MenuBar focusTraversable="false" style="-fx-background-color: #7ec5dd;" BorderPane.alignment="CENTER">
+      <MenuBar focusTraversable="false" prefHeight="33.0" prefWidth="674.0" style="-fx-background-color: #7ec5dd;" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="_Gestion de saisie">
               <MenuItem mnemonicParsing="false" onAction="#NouveauTab" text="Nouveau">

@@ -5,6 +5,7 @@ import com.wordus.essentials.AlertBox;
 import com.wordus.essentials.Dico;
 import com.wordus.essentials.Modal;
 import com.wordus.essentials.SpellChecker;
+import javafx.beans.InvalidationListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -44,6 +45,8 @@ public class Controller implements Initializable{
     private TextInputDialog textInputDialog;
     private ContextMenu contextMenu;
 
+    private String pathForRegister;
+
     Stage stage;
 
     public Dico dc = new Dico();
@@ -58,6 +61,8 @@ public class Controller implements Initializable{
     private HTMLEditor htmlEditor1;
     private Tab pan;
 
+    private boolean isSave = false;
+
 
     // Menu gestion de saisi
     //Nouveau
@@ -70,11 +75,10 @@ public class Controller implements Initializable{
     Object[] tableau2 = new Object[5];
     int j = 0;
     int i = 0;
-
     @FXML
-    String localfile = new String();
-
-
+    public void nameHTML(String eer) {
+         eer = "abc";
+    }
 
     @FXML
     public void NouveauTab() {
@@ -116,7 +120,7 @@ public class Controller implements Initializable{
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+                new FileChooser.ExtensionFilter("All files", "*"));
         File selectedFile = fileChooser.showOpenDialog(stage);
         if (selectedFile != null) {
 
@@ -147,13 +151,6 @@ public class Controller implements Initializable{
         }
     }
     @FXML
-    private void EnregistFile(){
-
-
-
-    }
-
-    @FXML
     public void Apros(){
         String  s="MEMBRES DU GROUPE:          BIDI PAUL      BOUA LEANDRE     DIBI BRICE      KOFFI SANDRA        YESSO LINDA     ZIE ALASANE";
         JOptionPane.showMessageDialog(null,s);
@@ -164,11 +161,30 @@ public class Controller implements Initializable{
     public void bool(){
         return ;
     }
-    //Enregistrer un doc
-    @FXML
-    public void EnregistsreSous() {
 
+    //Enregistrer un doc
+
+    @FXML
+    private void EnregistFile(){
+        if (isSave()) {
+
+            //System.out.println(this.getPathForRegister());
+            SaveFile(htmlEditor1.getHtmlText(), new File(this.getPathForRegister().toString()));
+        }
+
+
+    }
+
+
+    @FXML
+    private void EnregistsreSous() {
+
+        //boolean saved = false;
+
+        if (!isSave()) {
             currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+
+
             htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
             System.out.println(htmlEditor1.getHtmlText());
 
@@ -181,16 +197,20 @@ public class Controller implements Initializable{
 //Show save file dialog
             File file = fileChooser.showSaveDialog(stage);
 
+            this.setPathForRegister(file.toString());
+
+
 
             if (file != null) {
                 Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
                 // Element body = doc.body();
                 Element content = doc.tagName("body p");
-                SaveFile(String.valueOf(content.text()), file);
-            }
+                //SaveFile(String.valueOf(content.text()), file);
+                SaveFile(htmlEditor1.getHtmlText(), file);
 
-            String localfile = file.getPath();
-            System.out.println(localfile);
+                setIsSave(true);
+            }
+        }
     }
 
     @FXML
@@ -213,10 +233,6 @@ public class Controller implements Initializable{
         System.exit(0);
     }
 
-    @FXML
-    private void getAera() {
-        //statusLbl.setText(htmlEditor.getHtmlText());
-    }
 
     //Code pour le dictionnaire
     @FXML
@@ -283,7 +299,7 @@ public class Controller implements Initializable{
     @FXML
     private void insertImg() {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Resource File");
+        fileChooser.setTitle("Votre Image");
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
         File selectedFile = fileChooser.showOpenDialog(stage);
@@ -383,36 +399,21 @@ public class Controller implements Initializable{
         return currentTabs;
     }
 
+    public boolean isSave() {
+        return isSave;
+    }
+
+    public void setIsSave(boolean e) {
+        this.isSave = e;
+    }
+
 
     public void Test(ActionEvent actionEvent) {
-
-        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+        /*currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
         htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
-        System.out.println(htmlEditor1.getHtmlText());
+        htmlEditor1.getProperties().addListener((InvalidationListener) observable -> System.out.println("Champ d'édition modifié !"));*/
 
-        FileChooser fileChooser = new FileChooser();
-
-//Set extension filter
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
-        fileChooser.getExtensionFilters().add(extFilter);
-
-//Show save file dialog
-       // File file = fileChooser.showSaveDialog(stage);
-
-
-
-            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
-            // Element body = doc.body();
-            Element content = doc.tagName("body p");
-            SaveFile(String.valueOf(content.text()), file);
-
-
-       /* String localfile = file.getPath();
-        System.out.println(localfile);
-*/
-
-
-
+        System.out.println(isSave());
 
     }
 
@@ -455,8 +456,17 @@ public class Controller implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
 
+    public void searchReplace(ActionEvent actionEvent) {
+        Modal.showMdalRessource("../../../fxml/ReplaceWord.fxml", "Rechercher/Remplacer");
+    }
 
+    public String getPathForRegister() {
+        return pathForRegister;
+    }
 
+    public void setPathForRegister(String pathForRegister) {
+        this.pathForRegister = pathForRegister;
     }
 }

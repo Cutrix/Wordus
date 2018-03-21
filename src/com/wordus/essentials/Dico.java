@@ -70,7 +70,7 @@ public class Dico {
     }
 
     public void update(String word, String replaceW) {
-        //System.out.print("modificztion");
+        //System.out.print("modification");
         if (detectWord(word)) {
             int indexWord;
             ArrayList<String> al = new ArrayList<String>(Arrays.asList(this.getAllWords()));

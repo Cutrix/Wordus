@@ -1,0 +1,43 @@
+/*
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+
+
+
+public class App_main_origin extends Application{
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		try {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/Graph.fxml"));
+
+        primaryStage.setScene(new Scene(loader.load()));
+        primaryStage.setTitle("Wordus");
+		primaryStage.show();
+		//icon
+		//primaryStage.getIcons().add(new Image("font\\icon\\text-editor.png"));
+		primaryStage.getIcons().add(new Image("font/icon/text-editor.png"));
+
+
+
+		//HtmlEditor css
+		//stage.getStylesheets().add(getClass().getResource("htmleditor.css").toExternalForm());
+
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+	
+}
+
+*/

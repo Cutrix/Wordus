@@ -267,14 +267,16 @@ public class Controller implements Initializable{
     //Code pour le dictionnaire
     @FXML
     private void setLanguageFr() {
-        dc = new Dico("Langue Française selectionée !", "dico_fr.txt");
-        statusLbl.setText(dc.getLang());
+        dc = new Dico("Fr", "dico_fr.txt");
+        sp = new SpellChecker(dc);
+        statusLbl.setText("Langue Fancaise selectionnée");
     }
 
     @FXML
     private void setLanguageAng() {
-        dc = new Dico("Langue Anglaise selectionée !", "dico_ang.txt");
-        statusLbl.setText(dc.getLang());
+        dc = new Dico("En", "dico_ang.txt");
+        sp = new SpellChecker(dc);
+        statusLbl.setText("Langue Anglaise selectionnée");
     }
 
     @FXML

@@ -100,7 +100,8 @@ public class App_main extends Application {
 
 
                 for (int i = 0; i < availableFriends.size(); i++) {
-                    Thread.sleep(30);
+                    //Thread.sleep(30);
+                    Thread.sleep(100);
                     updateProgress(i + 1, availableFriends.size());
 
                 }

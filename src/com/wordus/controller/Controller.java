@@ -174,6 +174,34 @@ public class Controller implements Initializable{
             Element content = doc.tagName("body p");
             SaveFile(String.valueOf(content.text()), new File(this.getPathForRegister().toString()));
         }
+        else {
+            currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+            htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
+            System.out.println(htmlEditor1.getHtmlText());
+
+            FileChooser fileChooser = new FileChooser();
+
+//Set extension filter
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+            fileChooser.getExtensionFilters().add(extFilter);
+
+//Show save file dialog
+            File file = fileChooser.showSaveDialog(stage);
+
+            this.setPathForRegister(file.toString());
+
+
+
+            if (file != null) {
+                Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
+                // Element body = doc.body();
+                Element content = doc.tagName("body p");
+                SaveFile(String.valueOf(content.text()), file);
+                // SaveFile(htmlEditor1.getHtmlText(), file);
+
+                setIsSave(true);
+            }
+        }
 
 
     }
@@ -183,6 +211,7 @@ public class Controller implements Initializable{
     public void EnregistsreSous() {
 
         //boolean saved = false;
+        isSave = false;
 
         if (!isSave()) {
             currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
@@ -209,7 +238,7 @@ public class Controller implements Initializable{
                 SaveFile(String.valueOf(content.text()), file);
                // SaveFile(htmlEditor1.getHtmlText(), file);
 
-                setIsSave(true);
+               setIsSave(true);
             }
        }
     }

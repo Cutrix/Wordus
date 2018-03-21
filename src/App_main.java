@@ -118,7 +118,7 @@ public class App_main extends Application {
 
                 }
                 Thread.sleep(400);
-                updateMessage("Bienvenu sur Wordus Text Editor !");
+                updateMessage("Bienvenu sur Wordus Text Editor !".);
 
 
                 return foundFriends;

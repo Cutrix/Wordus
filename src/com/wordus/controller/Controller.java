@@ -169,7 +169,10 @@ public class Controller implements Initializable{
         if (isSave()) {
 
             //System.out.println(this.getPathForRegister());
-            SaveFile(htmlEditor1.getHtmlText(), new File(this.getPathForRegister().toString()));
+           // SaveFile(htmlEditor1.getHtmlText(), new File(this.getPathForRegister().toString()));
+            Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
+            Element content = doc.tagName("body p");
+            SaveFile(String.valueOf(content.text()), new File(this.getPathForRegister().toString()));
         }
 
 
@@ -177,14 +180,12 @@ public class Controller implements Initializable{
 
 
     @FXML
-    private void EnregistsreSous() {
+    public void EnregistsreSous() {
 
         //boolean saved = false;
 
         if (!isSave()) {
             currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
-
-
             htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
             System.out.println(htmlEditor1.getHtmlText());
 
@@ -205,12 +206,12 @@ public class Controller implements Initializable{
                 Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
                 // Element body = doc.body();
                 Element content = doc.tagName("body p");
-                //SaveFile(String.valueOf(content.text()), file);
-                SaveFile(htmlEditor1.getHtmlText(), file);
+                SaveFile(String.valueOf(content.text()), file);
+               // SaveFile(htmlEditor1.getHtmlText(), file);
 
                 setIsSave(true);
             }
-        }
+       }
     }
 
     @FXML

@@ -146,7 +146,7 @@ public class Controller implements Initializable{
     }
     @FXML
     public void Apros(){
-        Modal.showMdalRessource("../../../fxml/About.fxml", "About");
+        Modal.showMdalRessource("../../../fxml/Apropos.fxml", "About");
     }
 
 

@@ -152,8 +152,7 @@ public class Controller implements Initializable{
     }
     @FXML
     public void Apros(){
-        String  s="MEMBRES DU GROUPE:          BIDI PAUL      BOUA LEANDRE     DIBI BRICE      KOFFI SANDRA        YESSO LINDA     ZIE ALASANE";
-        JOptionPane.showMessageDialog(null,s);
+        Modal.showMdalRessource("../../../fxml/About.fxml", "About");
     }
 
 

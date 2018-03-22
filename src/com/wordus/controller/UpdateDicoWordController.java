@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import org.controlsfx.control.textfield.TextFields;
 
 import java.net.URL;
@@ -17,6 +18,7 @@ public class UpdateDicoWordController implements Initializable {
     public Button modifierMot;
 
     public Dico dc= new Dico();
+    public AnchorPane root;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -32,6 +34,7 @@ public class UpdateDicoWordController implements Initializable {
        String newWord = tfNewWord.getCharacters().toString();
 
        dc.update(oldWord, newWord);
+
 
     }
 }

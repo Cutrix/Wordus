@@ -330,7 +330,11 @@ public class Controller implements Initializable{
         Document doc = Jsoup.parse(htmlEditor.getHtmlText());
         Element content = doc.tagName("body p");
 
-        htmlEditor.setHtmlText(content.text() + "<img src='" + yourPics + "' style='width:300px; height: 300px'/>");
+        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+
+        htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
+
+        htmlEditor1.setHtmlText(content.text() + "<img src='" + yourPics + "' style='width:300px; height: 300px'/>");
     }
 
 

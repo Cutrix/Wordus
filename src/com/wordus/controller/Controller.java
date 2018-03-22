@@ -147,7 +147,7 @@ public class Controller implements Initializable{
     }
     @FXML
     public void Apros(){
-        stage.initStyle(StageStyle.UNDECORATED);
+       
         Modal.showMdalRessource("../../../fxml/Apropos.fxml", "A propos");
     }
 

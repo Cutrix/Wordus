@@ -29,7 +29,7 @@ public class App_main extends Application {
 
 
     //public static final String SPLASH_IMAGE = "http://abload.de/img/airbus-easyjetw5rhz.jpg";
-    public static final String SPLASH_IMAGE = "/font/svg ori/giphy.gif";
+    public static final String SPLASH_IMAGE = "\\font\\svg\\splash.jpg";
 
     private Pane splashLayout;
     private ProgressBar loadProgress;

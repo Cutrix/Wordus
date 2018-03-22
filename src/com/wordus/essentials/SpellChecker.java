@@ -1,16 +1,10 @@
 package com.wordus.essentials;
 
-import org.jsoup.Jsoup;
-
 public class SpellChecker {
-
     //Passage de dico par DI (Dependency Injection)
 
     private Dico dc;
-    private String likelyWords;
-
     public SpellChecker(Dico dc) {
-
         this.dc = dc;
     }
 
@@ -25,10 +19,8 @@ public class SpellChecker {
         return concatLikelyWord;
     }
 
-
     //Getters
     public Dico getDico() {
         return dc;
     }
-
 }

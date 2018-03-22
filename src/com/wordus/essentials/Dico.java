@@ -3,7 +3,6 @@ package com.wordus.essentials;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Dico {
 

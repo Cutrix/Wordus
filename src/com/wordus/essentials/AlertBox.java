@@ -195,15 +195,12 @@ public class AlertBox {
                 ResultSet result = state.executeQuery(query);
 
                 ArrayList<String> alMyColumns = new ArrayList<>();
-                //System.out.println(AlertBox.getColumnCount(result));
-                //System.out.println(AlertBox.getColumnNameArray(result));
+
                 for (int i = 0 ; i < AlertBox.getColumnCount(result) ; i++) {
-                    //System.out.println(AlertBox.getColumnNameArray(result)[i].join(", "));
+
                     alMyColumns.add(AlertBox.getColumnNameArray(result)[i]);
                 }
 
-
-                //System.out.println(String.join(", ", alMyColumns));
 
                 String[] myColumns = new String[alMyColumns.size()];
                 myColumns = alMyColumns.toArray(myColumns);
@@ -213,7 +210,7 @@ public class AlertBox {
                 while (result.next()) {
 
                     for (int c = 0 ; c < alMyColumns.size() ; c++) {
-                        //System.out.println(result.getString(myColumns[c]));
+
                         valuesColumns.add(result.getString(myColumns[c]));
                     }
                 }

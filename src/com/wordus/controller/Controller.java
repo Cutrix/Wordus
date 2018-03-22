@@ -5,7 +5,6 @@ import com.wordus.essentials.AlertBox;
 import com.wordus.essentials.Dico;
 import com.wordus.essentials.Modal;
 import com.wordus.essentials.SpellChecker;
-import javafx.beans.InvalidationListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +12,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Text;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -43,7 +41,7 @@ public class Controller implements Initializable{
     @FXML
     private HTMLEditor htmlEditor;
     private TextInputDialog textInputDialog;
-    private ContextMenu contextMenu;
+
 
     private String pathForRegister;
 
@@ -52,8 +50,7 @@ public class Controller implements Initializable{
     public Dico dc = new Dico();
     private SpellChecker sp;
 
-    private Text text;
-    private Label lb;
+
     private Tab currentTabs;
 
     private final static int SEE_FROM = 3;
@@ -75,10 +72,7 @@ public class Controller implements Initializable{
     Object[] tableau2 = new Object[5];
     int j = 0;
     int i = 0;
-    @FXML
-    public void nameHTML(String eer) {
-         eer = "abc";
-    }
+
 
     @FXML
     public void NouveauTab() {
@@ -157,10 +151,7 @@ public class Controller implements Initializable{
     }
 
 
-    @FXML
-    public void bool(){
-        return ;
-    }
+
 
     //Enregistrer un doc
 
@@ -397,19 +388,7 @@ public class Controller implements Initializable{
 
     public void voirmots(ActionEvent actionEvent) throws IOException {
         statusLbl.setText("Dictionnaire");
-        /*try {
 
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/fxml/Dictionnaire.fxml"));
-            AnchorPane pane = (AnchorPane) loader.load();
-            pane.autosize();
-            borderPane.setCenter(pane);
-
-            statusLbl.setText("Votre Dictionnaire personnel");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
         Modal.showMdalRessource("../../../fxml/Dictionnaire.fxml", "Mots du dictionnaire");
         statusLbl.setText("Bienvenue sur Wordus Texte Editeur");
     }

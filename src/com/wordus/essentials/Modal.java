@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -17,6 +18,8 @@ public class Modal {
         stage.setTitle(title);
         stage.setMinWidth(250);
         stage.getIcons().add(new Image("font/icon/text-editor.png"));
+            stage.initStyle(StageStyle.UTILITY);
+
 
         FXMLLoader loader = new FXMLLoader(Modal.class.getResource(res));
 

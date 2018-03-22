@@ -15,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -146,7 +147,8 @@ public class Controller implements Initializable{
     }
     @FXML
     public void Apros(){
-        Modal.showMdalRessource("../../../fxml/Apropos.fxml", "About");
+        stage.initStyle(StageStyle.UNDECORATED);
+        Modal.showMdalRessource("../../../fxml/Apropos.fxml", "A propos");
     }
 
 
@@ -484,5 +486,10 @@ public class Controller implements Initializable{
 
     public void setPathForRegister(String pathForRegister) {
         this.pathForRegister = pathForRegister;
+    }
+
+    @FXML
+    private void BackMain() {
+
     }
 }

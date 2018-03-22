@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="253.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="253.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.Controller">
    <children>
       <GridPane prefHeight="253.0" prefWidth="577.0" style="-fx-background-color: #ffffff;">
         <columnConstraints>
@@ -47,13 +47,13 @@
                      </textFill></Label>
                </children>
             </Pane>
-            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #becfe0;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Pane prefHeight="200.0" prefWidth="200.0">
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #becfe0;">
                            <children>
-                              <Button layoutX="74.0" layoutY="15.0" mnemonicParsing="false" text="OK">
+                              <Button layoutX="74.0" layoutY="15.0" mnemonicParsing="false" onAction="#BackMain" text="OK">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
@@ -64,7 +64,7 @@
                   </HBox>
                </children>
             </HBox>
-            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #becfe0;" GridPane.rowIndex="1">
                <children>
                   <Label layoutX="33.0" layoutY="22.0" text="Word Us V1.1">
                      <font>
@@ -81,7 +81,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #becfe0;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <Label layoutX="143.0" layoutY="22.0" text="Word Us V1.1">
                      <font>
@@ -111,6 +111,7 @@
                   </Label>
                </children>
             </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #becfe0;" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

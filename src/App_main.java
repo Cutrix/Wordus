@@ -148,6 +148,7 @@ public class App_main extends Application {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/Graph.fxml"));
         primaryStage = new Stage(StageStyle.DECORATED);
+
         try {
             primaryStage.setScene(new Scene(loader.load()));
         } catch (IOException e) {

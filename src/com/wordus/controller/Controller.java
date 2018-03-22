@@ -329,10 +329,12 @@ public class Controller implements Initializable{
 
         Document doc = Jsoup.parse(htmlEditor.getHtmlText());
         Element content = doc.tagName("body p");
+        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+        htmlEditor = (HTMLEditor) getCurrentTabs().getContent();
 
         htmlEditor.setHtmlText(content.text() + "<img src='" + yourPics + "' style='width:300px; height: 300px'/>");
     }
-
+N
 
     @FXML
     public void checkSyntax() {

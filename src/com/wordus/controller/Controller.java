@@ -329,6 +329,8 @@ public class Controller implements Initializable{
 
         Document doc = Jsoup.parse(htmlEditor.getHtmlText());
         Element content = doc.tagName("body p");
+        currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
+        htmlEditor = (HTMLEditor) getCurrentTabs().getContent();
 
         currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
 

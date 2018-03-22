@@ -6,8 +6,11 @@ import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.concurrent.Worker;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,10 +29,11 @@ public class App_main extends Application {
 
 
     //public static final String SPLASH_IMAGE = "http://abload.de/img/airbus-easyjetw5rhz.jpg";
-    public static final String SPLASH_IMAGE = "font/svg ori/giphy.gif";
+    public static final String SPLASH_IMAGE = "\\font\\svg ori\\giphy.gif";
 
     private Pane splashLayout;
-
+    private ProgressBar loadProgress;
+    private Label progressText;
     private Stage primaryStage;
     private static final int SPLASH_WIDTH = 676;
     private static final int SPLASH_HEIGHT = 407;
@@ -38,14 +42,15 @@ public class App_main extends Application {
     @Override
     public void init() {
         ImageView splash = new ImageView(new Image(SPLASH_IMAGE));
-
+        loadProgress = new ProgressBar();
+        loadProgress.setPrefWidth(SPLASH_WIDTH - 20);
+        progressText = new Label("Bienvenu sur Wordus Text Editor !");
         splashLayout = new VBox();
-
-        splashLayout.getChildren().addAll(splash);
-
+        splashLayout.getChildren().addAll(splash, loadProgress, progressText);
+        progressText.setAlignment(Pos.CENTER);
         splashLayout.setStyle(
                 "-fx-padding: 5; " +
-                        "-fx-background-color: cornsilk; " +
+                        "-fx-background-color: lightblue; " +
                         "-fx-border-width:3; " +
                         "-fx-border-color: " +
                         "linear-gradient(" +
@@ -63,12 +68,15 @@ public class App_main extends Application {
             Task<?> task,
             InitCompletionHandler initCompletionHandler) {
 
+        progressText.textProperty().bind(task.messageProperty());
+        loadProgress.progressProperty().bind(task.progressProperty());
         task.stateProperty().addListener((observableValue, oldState, newState) -> {
             if (newState == Worker.State.SUCCEEDED) {
-
+                loadProgress.progressProperty().unbind();
+                loadProgress.setProgress(1);
                 initStage.toFront();
                 FadeTransition fadeSplash = new FadeTransition(Duration.seconds(1.2), splashLayout);
-                fadeSplash.setFromValue(0.1);
+                fadeSplash.setFromValue(1.0);
                 fadeSplash.setToValue(0.0);
                 fadeSplash.setOnFinished(actionEvent -> initStage.hide());
                 fadeSplash.play();
@@ -95,7 +103,9 @@ public class App_main extends Application {
                         FXCollections.<String>observableArrayList();
                 ObservableList<String> availableFriends =
                         FXCollections.observableArrayList(
-                                "1", "1", "1", "1"
+                                "Dll...", "party...", "Graph...", "parametres...", "Thorin",
+                                "Dwalin", "Balin", "Bifur", "Bofur",
+                                "Bombur", "Dori", "Nori", "Ori"
                         );
 
 
@@ -103,9 +113,13 @@ public class App_main extends Application {
                     //Thread.sleep(30);
                     Thread.sleep(100);
                     updateProgress(i + 1, availableFriends.size());
+                    String nextFriend = availableFriends.get(i);
+                    foundFriends.add(nextFriend);
+                    updateMessage("Chargement des Fichiers système ......      " + nextFriend);
 
                 }
-                Thread.sleep(30);
+                Thread.sleep(400);
+                updateMessage("Bienvenu sur Wordus Text Editor !".);
 
 
                 return foundFriends;
@@ -140,7 +154,7 @@ public class App_main extends Application {
             e.printStackTrace();
         }
         primaryStage.setTitle("Wordus");
-        primaryStage.show();
+
         //icon
         primaryStage.getIcons().add(new Image("font/icon/text-editor.png"));
 

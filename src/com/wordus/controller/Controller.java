@@ -334,7 +334,7 @@ public class Controller implements Initializable{
 
         htmlEditor.setHtmlText(content.text() + "<img src='" + yourPics + "' style='width:300px; height: 300px'/>");
     }
-N
+
 
     @FXML
     public void checkSyntax() {

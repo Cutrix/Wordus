@@ -103,9 +103,9 @@ public class App_main extends Application {
                         FXCollections.<String>observableArrayList();
                 ObservableList<String> availableFriends =
                         FXCollections.observableArrayList(
-                                "Dll...", "party...", "Graph...", "parametres...", "Thorin",
-                                "Dwalin", "Balin", "Bifur", "Bofur",
-                                "Bombur", "Dori", "Nori", "Ori"
+                                " ", "  ", " ", " ", " ",
+                                " ", " ", " ", " ",
+                                "  ", " ", "  ", "  ","  ", "  "
                         );
 
 

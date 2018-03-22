@@ -20,6 +20,8 @@ public class Modal {
 
         FXMLLoader loader = new FXMLLoader(Modal.class.getResource(res));
 
+        stage.close();
+
             stage.setScene(new Scene(loader.load()));
             stage.showAndWait();
         } catch (IOException e) {

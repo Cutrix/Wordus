@@ -25,6 +25,7 @@ public class AlertBox {
         window.setTitle(title);
         window.setMinWidth(200);
         window.getIcons().add(new Image("font/icon/text-editor.png"));
+
         
         Label label=new Label(message);
         
@@ -61,6 +62,7 @@ public class AlertBox {
         //System.exit(0);
         
         Button btn=new Button("Executer Votre Requête");
+
         btn.setOnAction(e-> {
             try{
                 Connection conn=connection();
@@ -80,6 +82,7 @@ public class AlertBox {
         });
         
         VBox layout=new VBox();
+
         layout.getChildren().addAll(label,textarea,btn);
         
         

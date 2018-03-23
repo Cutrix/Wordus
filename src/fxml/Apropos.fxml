@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="253.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.Controller">
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="253.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordus.controller.Aproposcontroller">
    <children>
       <GridPane prefHeight="253.0" prefWidth="577.0" style="-fx-background-color: #ffffff;">
         <columnConstraints>
@@ -28,7 +28,7 @@
          <children>
             <ImageView fitHeight="151.0" fitWidth="206.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../font/icon/1499747191_W%20(1).gif" />
+                  <Image url="@../font/icon/1499747191_W.gif" />
                </image>
             </ImageView>
             <Pane prefHeight="151.0" prefWidth="401.0" style="-fx-background-color: #7ec5dd;" GridPane.columnIndex="1">
@@ -53,7 +53,7 @@
                      <children>
                         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #becfe0;">
                            <children>
-                              <Button layoutX="51.0" layoutY="9.0" minWidth="53.0" mnemonicParsing="false" onAction="#BackMain" prefHeight="36.0" prefWidth="98.0" text="OK">
+                              <Button id="btnOk" layoutX="51.0" layoutY="9.0" minWidth="53.0" mnemonicParsing="false" onAction="#BackMain" prefHeight="36.0" prefWidth="98.0" text="OK">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>

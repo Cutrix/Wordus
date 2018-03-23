@@ -1,6 +1,6 @@
 # Wordus
 
-###wordus est un editeur simple et leger
+Wordus est un editeur simple et leger
 
 ## Dependances 
 

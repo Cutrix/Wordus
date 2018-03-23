@@ -509,16 +509,6 @@ try {
 
     @FXML
     private void BackMain() {
-<<<<<<< HEAD
-
-        System.out.println("azo");
-
-
         
-
-
-=======
-        System.out.println("azo");
->>>>>>> 77abe1882249908ed52a603b2338608a450ec3db
     }
 }

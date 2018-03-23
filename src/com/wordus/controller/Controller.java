@@ -21,6 +21,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
+import org.controlsfx.control.textfield.AutoCompletionBinding;
+import org.controlsfx.control.textfield.TextFields;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -172,9 +174,6 @@ try {
     }
 
 
-
-
-
     //Enregistrer un doc
 
     @FXML
@@ -229,7 +228,7 @@ try {
         if (!isSave()) {
             currentTabs = Tabpaner.getTabs().get(Tabpaner.getSelectionModel().getSelectedIndex());
             htmlEditor1 = (HTMLEditor) getCurrentTabs().getContent();
-            System.out.println(htmlEditor1.getHtmlText());
+            //System.out.println(htmlEditor1.getHtmlText());
 
             FileChooser fileChooser = new FileChooser();
 
@@ -246,10 +245,11 @@ try {
 
             if (file != null) {
                 Document doc = Jsoup.parseBodyFragment(htmlEditor1.getHtmlText());
-                // Element body = doc.body();
-                Element content = doc.tagName("body p");
-                SaveFile(String.valueOf(content.text()), file);
-               // SaveFile(htmlEditor1.getHtmlText(), file);
+                 Element body = doc.body();
+                //Element content = doc.tagName("body p");
+                //SaveFile(String.valueOf(content.text()), file);
+                SaveFile(String.valueOf(body), file);
+
 
                setIsSave(true);
             }
@@ -324,12 +324,15 @@ try {
         //stage1.getIcons().add(new Image(this.getClass().getResource("font/icon/text-editor.png").toString()));
         stage1.getIcons().add(new Image("font/icon/text-editor.png"));
 
+        //Autocompletion du textField
+
+        TextField tf = textInputDialog.getEditor();
+        TextFields.bindAutoCompletion(tf, dc.getWords().split(" "));
 
         Optional<String> mot = textInputDialog.showAndWait();
         if (mot.isPresent()) {
             dc.del(mot.get());
             statusLbl.setText("Mot supprimer");
-            System.out.println(textInputDialog.getEditor().getCharacters());
         }
     }
 

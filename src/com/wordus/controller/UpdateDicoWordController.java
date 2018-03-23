@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import org.controlsfx.control.textfield.TextFields;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -35,6 +36,7 @@ public class UpdateDicoWordController implements Initializable {
 
        dc.update(oldWord, newWord);
 
-
+        Window stage;
+        root.getScene().getWindow().hide();
     }
 }

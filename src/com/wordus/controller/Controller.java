@@ -511,7 +511,7 @@ try {
 
     @FXML
     private void BackMain() {
-        Window stage;
+
         root.getScene().getWindow().hide();
     }
 }

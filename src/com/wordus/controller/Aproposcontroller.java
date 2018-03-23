@@ -20,8 +20,8 @@ public class Aproposcontroller implements Initializable {
 
     public void BackMain(ActionEvent actionEvent) {
         //System.out.println(root.getScene().getWindow());
-        Window stage;
-        root.getScene().getWindow().hide(); 
+        Window stage;   
+        root.getScene().getWindow().hide();
 
     }
 }

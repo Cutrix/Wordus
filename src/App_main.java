@@ -103,9 +103,9 @@ public class App_main extends Application {
                         FXCollections.<String>observableArrayList();
                 ObservableList<String> availableFriends =
                         FXCollections.observableArrayList(
-                                " ", "  ", " ", " ", " ",
-                                " ", " ", " ", " ",
-                                "  ", " ", "  ", "  ","  ", "  "
+                                ".", "..", "...", "....", ".....",
+                                "......",".", "..", "...", "....", ".....",
+                                "......"
                         );
 
 
@@ -115,7 +115,7 @@ public class App_main extends Application {
                     updateProgress(i + 1, availableFriends.size());
                     String nextFriend = availableFriends.get(i);
                     foundFriends.add(nextFriend);
-                    updateMessage("Chargement des Fichiers système ......      " + nextFriend);
+                    updateMessage("Chargement des Fichiers système " + nextFriend);
 
                 }
                 Thread.sleep(400);

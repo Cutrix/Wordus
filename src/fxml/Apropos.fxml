@@ -53,7 +53,7 @@
                      <children>
                         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #becfe0;">
                            <children>
-                              <Button layoutX="74.0" layoutY="15.0" mnemonicParsing="false" onAction="#BackMain" text="OK">
+                              <Button layoutX="51.0" layoutY="9.0" minWidth="53.0" mnemonicParsing="false" onAction="#BackMain" prefHeight="36.0" prefWidth="98.0" text="OK">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
@@ -83,7 +83,7 @@
             </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #becfe0;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label layoutX="143.0" layoutY="22.0" text="Word Us V1.1">
+                  <Label layoutX="110.0" layoutY="22.0" text="Tous droits réservés.">
                      <font>
                         <Font name="Comic Sans MS" size="18.0" />
                      </font>
@@ -96,7 +96,7 @@
                         </RadialGradient>
                      </textFill>
                   </Label>
-                  <Label layoutX="81.0" layoutY="2.0" text="Wordus est un editeur leger">
+                  <Label layoutX="74.0" layoutY="2.0" text="Copyright WordUs Inc. 2018. ">
                      <font>
                         <Font name="Comic Sans MS" size="18.0" />
                      </font>

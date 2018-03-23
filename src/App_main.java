@@ -133,14 +133,7 @@ public class App_main extends Application {
         );
         new Thread(friendTask).start();
     }
-
-
-
-
-
-
-
-
+    
     protected interface InitCompletionHandler {
         void complete();
     }

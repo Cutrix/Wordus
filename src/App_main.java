@@ -21,16 +21,11 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-
 import java.io.IOException;
 
 
 public class App_main extends Application {
-
-
-    //public static final String SPLASH_IMAGE = "http://abload.de/img/airbus-easyjetw5rhz.jpg";
     public static final String SPLASH_IMAGE = "/font/svg/splash.jpg";
-
     private Pane splashLayout;
     private ProgressBar loadProgress;
     private Label progressText;
@@ -67,7 +62,6 @@ public class App_main extends Application {
             final Stage initStage,
             Task<?> task,
             InitCompletionHandler initCompletionHandler) {
-
         progressText.textProperty().bind(task.messageProperty());
         loadProgress.progressProperty().bind(task.progressProperty());
         task.stateProperty().addListener((observableValue, oldState, newState) -> {

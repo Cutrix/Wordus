@@ -7,11 +7,15 @@ import com.wordus.essentials.Modal;
 import com.wordus.essentials.SpellChecker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -148,8 +152,23 @@ public class Controller implements Initializable{
     @FXML
     public void Apros(){
 
-        Modal.showMdalRessource("../../../fxml/Apropos.fxml", "A propos");
+       // Modal.showMdalRessource("../../../fxml/Apropos.fxml", "A propos");
+try {
+    Parent root = FXMLLoader.load(getClass().getResource("/fxml/Apropos.fxml"));
+    Scene scene = new Scene(root);
+
+    Stage stage = new Stage();
+    stage.getIcons().add(new Image("font/icon/text-editor.png"));
+    stage.initStyle(StageStyle.UNDECORATED);
+    stage.setScene(scene);
+    stage.show();
+
+    } catch (IOException e) {
+        e.printStackTrace();
     }
+
+    }
+
 
 
 
@@ -490,6 +509,11 @@ public class Controller implements Initializable{
 
     @FXML
     private void BackMain() {
+
+        System.out.println("azo");
+
+        
+
 
     }
 }

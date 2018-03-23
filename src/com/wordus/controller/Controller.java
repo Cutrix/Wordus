@@ -153,9 +153,10 @@ public class Controller implements Initializable{
     @FXML
     public void Apros(){
 
+
        // Modal.showMdalRessource("../../../fxml/Apropos.fxml", "A propos");
 try {
-    Parent root = FXMLLoader.load(getClass().getResource("/fxml/Apropos.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("../../../fxml/Apropos.fxml"));
     Scene scene = new Scene(root);
 
     Stage stage = new Stage();

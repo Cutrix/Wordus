@@ -4,8 +4,6 @@ import com.wordus.essentials.Dico;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class DicoTest{
     @Test
     public void DetectWordTest() {
@@ -15,6 +13,11 @@ public class DicoTest{
        String word2= "bidi";
        assertEquals(test.detectWord(word1),test.detectWord(word2));
     }
+
+	private void assertEquals(boolean detectWord, boolean detectWord2) {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 

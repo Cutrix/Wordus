@@ -20,6 +20,7 @@ import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.Window;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -38,7 +39,7 @@ import java.util.logging.Logger;
 
 public class Controller implements Initializable{
 
-
+    public Pane root;
     @FXML
     public BorderPane borderPane;
     @FXML
@@ -509,6 +510,7 @@ try {
 
     @FXML
     private void BackMain() {
-
+        Window stage;
+        root.getScene().getWindow().hide();
     }
 }

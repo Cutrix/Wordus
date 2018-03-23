@@ -35,7 +35,7 @@ public class App_main extends Application {
     private ProgressBar loadProgress;
     private Label progressText;
     private Stage primaryStage;
-    private static final int SPLASH_WIDTH = 676;
+    private static final int SPLASH_WIDTH = 656;
     private static final int SPLASH_HEIGHT = 407;
 
 
@@ -133,7 +133,7 @@ public class App_main extends Application {
         );
         new Thread(friendTask).start();
     }
-    
+
     protected interface InitCompletionHandler {
         void complete();
     }
